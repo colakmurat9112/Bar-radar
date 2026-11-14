@@ -171,10 +171,10 @@ def summarize(name, city, reviews):
     if "2.5" in CFG["gemini_model"]:
         gen["thinkingConfig"] = {"thinkingBudget": 0}  # düşünme token'ı harcama
     body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": gen}
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{CFG['gemini_model']}:generateContent"
+        url = f"https://generativelanguage.googleapis.com/v1beta/models/{CFG['gemini_model']}:generateContent?key={GEMINI_KEY}"
     for attempt in range(4):
         try:
-            data = http("POST", url, body, {"x-goog-api-key": GEMINI_KEY})
+            data = http("POST", url, body)
             return data["candidates"][0]["content"]["parts"][0]["text"].strip()
         except urllib.error.HTTPError as e:
             if e.code in (429, 500, 503) and attempt < 3:

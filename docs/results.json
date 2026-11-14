@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "id": "ChIJ-Z2BxKKXnkcR4fHUOtuXxM8",
+    "name": "golddurst",
+    "city": "Augsburg",
+    "address": "Allensteinstraße 11, 86167 Augsburg, Germany",
+    "rating": 5,
+    "reviews_count": 18,
+    "first_review": "2026-07-24",
+    "summary": "Mekan filtreden geçti! 18 yoruma ve 5 yıldıza sahip. Menü, ortam ve detaylar için aşağıdaki butondan Google Maps'e git.",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=golddurst&query_place_id=ChIJ-Z2BxKKXnkcR4fHUOtuXxM8",
+    "added": "2026-11-14"
+  },
+  {
+    "id": "ChIJJVHczfaZnkcRVETx-Pz-YCg",
+    "name": "BABYLON NIGHT LOUNGE",
+    "city": "Augsburg",
+    "address": "Unterer Talweg 119, 86179 Augsburg-Haunstetten-Siebenbrunn, Germany",
+    "rating": 5,
+    "reviews_count": 21,
+    "first_review": "2026-03-07",
+    "summary": "Mekan filtreden geçti! 21 yoruma ve 5 yıldıza sahip. Menü, ortam ve detaylar için aşağıdaki butondan Google Maps'e git.",
+    "maps_url": "https://www.google.com/maps/search/?api=1&query=BABYLON%20NIGHT%20LOUNGE&query_place_id=ChIJJVHczfaZnkcRVETx-Pz-YCg",
+    "added": "2026-11-14"
+  }
+]

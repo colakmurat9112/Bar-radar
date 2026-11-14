@@ -1,14 +1,4 @@
 #!/usr/bin/env python3
-"""Bar Radar: yeni açılmış, başarılı kokteyl barlarını bulur, yorumlarını özetler.
-
-Akış (maliyet için 2 aşamalı):
-  1) Şehir başına SADECE mekan listesi çek (yorum yok -> ucuz) ve ucuz filtrele
-     (yıldız >= 4.0, toplam yorum sayısı makul aralıkta, daha önce görülmemiş).
-  2) Sadece hayatta kalan adayların yorumlarını çek. En eski yorum 18 aydan
-     eskiyse mekan elenir. Kalanlar için Gemini ile 3-4 cümlelik özet üretilir.
-
-Sadece standart kütüphane kullanır (pip install gerekmez).
-"""
 import json
 import os
 import sys
@@ -30,7 +20,6 @@ ACTOR = "compass~crawler-google-places"
 APIFY = "https://api.apify.com/v2"
 
 
-# ---------- yardımcılar ----------
 def log(*a):
     print(*a, flush=True)
 
@@ -64,9 +53,7 @@ def save_json(path, obj):
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-# ---------- Apify ----------
 def apify_run(actor_input, max_usd):
-    """Actor'ı başlatır, bitmesini bekler, dataset öğelerini döndürür."""
     auth = {"Authorization": f"Bearer {APIFY_TOKEN}"}
     run = http("POST", f"{APIFY}/acts/{ACTOR}/runs", actor_input, auth)["data"]
     run_id = run["id"]
@@ -122,7 +109,6 @@ def passes_cheap_filter(p):
 
 
 def stage2_reviews(candidates):
-    """Adayların yorumlarını tek run'da çeker. {placeId: [review,...]} döndürür."""
     items = apify_run(
         {
             "startUrls": [{"url": c["url"]} for c in candidates],
@@ -136,14 +122,13 @@ def stage2_reviews(candidates):
     )
     by = {}
     for it in items:
-        if isinstance(it.get("reviews"), list):  # yorumlar mekanın içinde
+        if isinstance(it.get("reviews"), list):
             by.setdefault(place_id(it), []).extend(it["reviews"])
-        elif it.get("publishedAtDate") or it.get("reviewId"):  # yorum ayrı satır
+        elif it.get("publishedAtDate") or it.get("reviewId"):
             by.setdefault(it.get("placeId") or it.get("placeUrl"), []).append(it)
     return by
 
 
-# ---------- Gemini ----------
 def summarize(name, city, reviews):
     texts = []
     for r in reviews:
@@ -169,9 +154,10 @@ def summarize(name, city, reviews):
     )
     gen = {"temperature": 0.3, "maxOutputTokens": 500}
     if "2.5" in CFG["gemini_model"]:
-        gen["thinkingConfig"] = {"thinkingBudget": 0}  # düşünme token'ı harcama
+        gen["thinkingConfig"] = {"thinkingBudget": 0}
     body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": gen}
-        url = f"https://generativelanguage.googleapis.com/v1beta/models/{CFG['gemini_model']}:generateContent?key={GEMINI_KEY}"
+    
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{CFG['gemini_model']}:generateContent?key={GEMINI_KEY}"
     for attempt in range(4):
         try:
             data = http("POST", url, body)
@@ -187,7 +173,6 @@ def summarize(name, city, reviews):
     return None
 
 
-# ---------- ana akış ----------
 def main():
     if not APIFY_TOKEN or not GEMINI_KEY:
         sys.exit("APIFY_TOKEN ve GEMINI_API_KEY ortam değişkenleri gerekli.")
@@ -198,18 +183,16 @@ def main():
     results = load_json(RESULTS_PATH, [])
     cities = CFG["cities"]
 
-    # 1) Bu hafta sıradaki şehirler
     start = state["city_idx"] % len(cities)
     batch = [cities[(start + i) % len(cities)] for i in range(min(CFG["cities_per_run"], len(cities)))]
     state["city_idx"] = (start + len(batch)) % len(cities)
     log("Bu hafta:", ", ".join(c["name"] for c in batch))
 
-    # 2) Ucuz aşama: mekan listesi + filtre
     candidates = []
     for c in batch:
         try:
             places = stage1_search(c["query"])
-        except Exception as e:  # bir şehir patlarsa diğerlerine devam
+        except Exception as e:
             log(f"  {c['name']} atlandı: {e}")
             continue
         for p in places:
@@ -221,14 +204,13 @@ def main():
                 candidates.append(p)
         log(f"{c['name']}: {len(places)} mekan tarandı, toplam aday {len(candidates)}")
 
-    candidates.sort(key=lambda p: p.get("reviewsCount") or 0)  # az yorumlu = muhtemelen daha yeni
+    candidates.sort(key=lambda p: p.get("reviewsCount") or 0)
     candidates = candidates[: CFG["max_detail_per_run"]]
     if not candidates:
         log("Yeni aday yok.")
         save_json(STATE_PATH, state)
         return
 
-    # 3) Pahalı aşama: sadece adayların yorumları
     log(f"{len(candidates)} adayın yorumları çekiliyor...")
     reviews_by = stage2_reviews(candidates)
 

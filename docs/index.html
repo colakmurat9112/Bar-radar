@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bar Radar</title>
+<style>
+  body{font:16px/1.5 system-ui,sans-serif;margin:0;background:#14110f;color:#eee}
+  header{padding:20px 16px 8px;max-width:760px;margin:auto}
+  h1{margin:0;font-size:22px}
+  .sub{color:#999;font-size:14px}
+  .bar{max-width:760px;margin:8px auto;padding:0 16px;display:flex;gap:8px}
+  select,input{flex:1;padding:10px;border-radius:8px;border:1px solid #3a332d;background:#1f1a16;color:#eee;font-size:15px}
+  main{max-width:760px;margin:auto;padding:8px 16px 40px}
+  .card{background:#1f1a16;border:1px solid #3a332d;border-radius:12px;padding:14px 16px;margin:12px 0}
+  .card h2{margin:0 0 2px;font-size:18px}
+  .meta{color:#aaa;font-size:13px;margin-bottom:8px}
+  .new{background:#c8923a;color:#14110f;border-radius:6px;padding:1px 7px;font-size:12px;font-weight:700;margin-left:6px}
+  .card p{margin:8px 0 12px}
+  a.map{display:inline-block;background:#c8923a;color:#14110f;text-decoration:none;font-weight:600;padding:8px 14px;border-radius:8px}
+  .empty{color:#999;text-align:center;margin-top:40px}
+</style>
+</head>
+<body>
+<header>
+  <h1>🍸 Bar Radar</h1>
+  <div class="sub" id="stats">Yükleniyor…</div>
+</header>
+<div class="bar">
+  <input id="q" type="search" placeholder="Ara (isim, özet)…">
+  <select id="city"><option value="">Tüm şehirler</option></select>
+</div>
+<main id="list"></main>
+<script>
+(async () => {
+  let data = [];
+  try { data = await (await fetch("results.json", {cache: "no-store"})).json(); } catch (e) {}
+  const list = document.getElementById("list"), q = document.getElementById("q"), citySel = document.getElementById("city");
+  [...new Set(data.map(d => d.city))].sort().forEach(c => {
+    const o = document.createElement("option"); o.value = o.textContent = c; citySel.appendChild(o);
+  });
+  const weekAgo = Date.now() - 7 * 864e5;
+  function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
+  function render() {
+    const term = q.value.toLowerCase(), city = citySel.value;
+    const rows = data.filter(d => (!city || d.city === city) && (!term || (d.name + " " + d.summary).toLowerCase().includes(term)));
+    document.getElementById("stats").textContent = data.length + " mekan • gösterilen: " + rows.length;
+    list.replaceChildren();
+    if (!rows.length) { list.appendChild(el("div", "empty", "Henüz sonuç yok. İlk haftalık çalıştırmayı bekle.")); return; }
+    rows.forEach(d => {
+      const card = el("div", "card");
+      const h = el("h2", "", d.name);
+      if (new Date(d.added).getTime() > weekAgo) h.appendChild(el("span", "new", "YENİ"));
+      card.appendChild(h);
+      card.appendChild(el("div", "meta", d.city + " • ⭐ " + d.rating + " (" + d.reviews_count + " yorum) • ilk yorum: " + d.first_review));
+      card.appendChild(el("p", "", d.summary));
+      if (/^https:\/\//.test(d.maps_url || "")) {
+        const a = el("a", "map", "Maps'te aç (menü fotoları)");
+        a.href = d.maps_url; a.target = "_blank"; a.rel = "noopener";
+        card.appendChild(a);
+      }
+      list.appendChild(card);
+    });
+  }
+  q.addEventListener("input", render); citySel.addEventListener("change", render);
+  render();
+})();
+</script>
+</body>
+</html>

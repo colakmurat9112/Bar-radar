@@ -66,11 +66,9 @@ def save_json(path, obj):
 
 # ---------- Apify ----------
 def apify_run(actor_input, max_usd):
-    """Actor'ı başlatır, bitmesini bekler, dataset öğelerini döndürür.
-    maxTotalChargeUsd: bu çalıştırma için harcama tavanı (güvenlik freni)."""
+    """Actor'ı başlatır, bitmesini bekler, dataset öğelerini döndürür."""
     auth = {"Authorization": f"Bearer {APIFY_TOKEN}"}
-    q = urllib.parse.urlencode({"maxTotalChargeUsd": max_usd})
-    run = http("POST", f"{APIFY}/acts/{ACTOR}/runs?{q}", actor_input, auth)["data"]
+    run = http("POST", f"{APIFY}/acts/{ACTOR}/runs", actor_input, auth)["data"]
     run_id = run["id"]
     deadline = time.time() + 25 * 60
     status = run["status"]
@@ -278,4 +276,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-  

@@ -29,18 +29,13 @@
   a.map{display:inline-block;background:#c8923a;color:#14110f;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;font-size:13px}
   details{margin-top:8px;font-size:13px;color:#bbb}
   summary{cursor:pointer;color:#c8923a}
-  .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;padding:16px}
-  .modal-content{background:#1f1a16;border:1px solid #3a332d;padding:16px;border-radius:12px;max-width:420px;width:100%}
   .empty{color:#999;text-align:center;margin-top:40px}
 </style>
 </head>
 <body>
 <header>
   <h1>🍸 Bar Radar</h1>
-  <div style="display:flex;gap:6px">
-    <button class="btn btn-gold" id="batchAiBtn">⚡ Tümünü AI ile Filtrele</button>
-    <button class="btn" id="keyBtn">🔑 AI Anahtarı</button>
-  </div>
+  <button class="btn btn-gold" id="batchAiBtn">⚡ Tümünü Ücretsiz AI ile Filtrele</button>
   <div class="sub" id="stats">Yükleniyor…</div>
 </header>
 
@@ -56,86 +51,92 @@
 
 <main id="list"></main>
 
-<div class="modal" id="keyModal">
-  <div class="modal-content">
-    <h3 style="margin-top:0">🤖 AI API Anahtarı</h3>
-    <p style="font-size:13px;color:#aaa">Gemini (<b>AIza...</b>) veya Groq (<b>gsk_...</b>) API anahtarını yapıştır. Sadece senin telefonunda (tarayıcıda) saklanır.</p>
-    <input id="apiKeyInput" type="password" placeholder="AIza... veya gsk_..." style="width:100%;box-sizing:border-box;margin-bottom:10px">
-    <div style="display:flex;gap:8px;justify-content:flex-end">
-      <button class="btn" id="closeModal">Kapat</button>
-      <button class="btn btn-gold" id="saveKey">Kaydet</button>
-    </div>
-  </div>
-</div>
-
 <script>
 (async () => {
   let data = [];
   try { data = await (await fetch("results.json?t=" + Date.now(), {cache: "no-store"})).json(); } catch (e) {}
 
-  // Kullanıcının telefonunda yaptığı AI analizlerini ve filtre kararlarını yükle
-  const localCache = JSON.parse(localStorage.getItem("bar_radar_ai_cache") || "{}");
-
+  const localCache = JSON.parse(localStorage.getItem("bar_radar_free_ai") || "{}");
   const list = document.getElementById("list"), q = document.getElementById("q"), citySel = document.getElementById("city");
-  let activeTab = "filtered"; // "filtered" veya "raw"
+  let activeTab = "filtered";
 
-  // Mobil bar, hamburgerci vb. kelimeler (eski results.json kayıtlarını da anında yakalamak için)
-  const badWords = ["mobil", "event", "cater", "burger", "hamburger", "pizza", "shisha", "hookah", "nargile", "döner", "kebab"];
+  // Kategorileri otomatik tanıyan yerel akıllı motor
+  function smartClassify(d) {
+    const text = ((d.name || "") + " " + (d.category || "") + " " + (d.summary || "") + " " + ((d.reviews || []).join(" "))).toLowerCase();
+    if (/mobil|cater|eventservice|verleih|wagen|truck|golddurst/.test(text)) {
+      return {is_real_bar: false, type: "Mobil Bar / Catering", reason: "Mekan sabit bir bar değil, etkinlik/düğün için mobil bar kiralama servisi."};
+    }
+    if (/burger|hamburger|pizza|pizzeria|döner|kebab|steak|sushi|schnitzel|imbiss/.test(text)) {
+      return {is_real_bar: false, type: "Restoran / Hamburgerci", reason: "Ana odak noktası yemek/hamburger servisi olan restoran."};
+    }
+    if (/shisha|hookah|nargile|tabak|wasserpfeife/.test(text)) {
+      return {is_real_bar: false, type: "Shisha / Nargile Lounge", reason: "Mekan ağırlıklı olarak nargile (shisha) kafe/lounge konseptinde."};
+    }
+    return {is_real_bar: true, type: d.category || "Kokteyl Bar / Lounge", reason: "Yerleşik bar/lounge kriterlerine uygun görünüyor."};
+  }
 
   function isRealBar(d) {
     if (localCache[d.id] && typeof localCache[d.id].is_real_bar === "boolean") {
       return localCache[d.id].is_real_bar;
     }
     if (typeof d.is_real_bar === "boolean") return d.is_real_bar;
-    const text = ((d.name || "") + " " + (d.category || "") + " " + (d.summary || "")).toLowerCase();
-    return !badWords.some(w => text.includes(w));
+    return smartClassify(d).is_real_bar;
   }
 
   [...new Set(data.map(d => d.city))].sort().forEach(c => {
     const o = document.createElement("option"); o.value = o.textContent = c; citySel.appendChild(o);
   });
 
-  async function callAI(d) {
-    const key = (localStorage.getItem("bar_radar_api_key") || "").trim();
-    if (!key) {
-      document.getElementById("keyModal").style.display = "flex";
-      return null;
-    }
-    const revs = (d.reviews && d.reviews.length) ? d.reviews.join("\n") : (d.summary || "Yorum metni yok, sadece isim ve kategoriye bak.");
-    const prompt = `Mekan Adı: ${d.name}\nŞehir: ${d.city}\nKategori: ${d.category || "Belirtilmemiş"}\nYorumlar:\n${revs}\n\nGörev: Bu mekan gerçek bir yerleşik kokteyl bar/lounge mı, yoksa mobil bar (catering/event), hamburgerci/restoran, nargileci (shisha) gibi farklı bir yer mi?\nYanıtını SADECE şu JSON formatında ver:\n{"is_real_bar": true veya false, "type": "Kısa Tür (Örn: Kokteyl Bar / Mobil Bar / Hamburgerci / Shisha Lounge)", "summary": "3 cümlelik Türkçe analiz: Mekan gerçekte ne iş yapıyor, hangi kokteyller/içecekler veya özellikler övülmüş, fiyat/performans nasıl?"}`;
+  // Anahtarsız, tamamen ücretsiz AI çağrısı (Pollinations OpenAI Endpoint + Yerel Yedek)
+  async function analyzeWithFreeAI(d) {
+    const baseCheck = smartClassify(d);
+    const revs = (d.reviews && d.reviews.length) ? d.reviews.slice(0, 8).join("\n") : (d.summary || "");
+    const prompt = `Sen profesyonel bir bar danışmanısın. Şu mekanı analiz et:
+Mekan Adı: ${d.name}
+Şehir: ${d.city}
+Kategori: ${d.category || "Belirtilmemiş"}
+Yorumlar:
+${revs}
 
-    let respText = "";
-    if (key.startsWith("gsk_")) {
-      const r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-        method: "POST",
-        headers: {"Content-Type": "application/json", "Authorization": "Bearer " + key},
-        body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
-          messages: [{role: "user", content: prompt}],
-          temperature: 0.2,
-          response_format: {type: "json_object"}
-        })
-      });
-      const j = await r.json();
-      if (!r.ok) throw new Error(j.error?.message || r.status);
-      respText = j.choices[0].message.content;
-    } else {
-      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`, {
+Sadece şu JSON formatında Türkçe yanıt ver (başka hiçbir şey yazma):
+{"is_real_bar": true veya false, "type": "Kokteyl Bar / Mobil Bar / Hamburgerci / Shisha Lounge", "summary": "3 cümlelik Türkçe özet: Bu mekan gerçek bir kokteyl bar mı yoksa yemekçi/mobil bar mı? Müşteriler hangi içecekleri, atmosferi veya fiyatları övmüş?"}`;
+
+    try {
+      const r = await fetch("https://text.pollinations.ai/", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
         body: JSON.stringify({
-          contents: [{parts: [{text: prompt}]}],
-          generationConfig: {temperature: 0.2, responseMimeType: "application/json"}
+          messages: [
+            {role: "system", content: "Sadece geçerli JSON döndüren bir asistansın."},
+            {role: "user", content: prompt}
+          ],
+          model: "openai",
+          jsonMode: true
         })
       });
-      const j = await r.json();
-      if (!r.ok) throw new Error(j.error?.message || r.status);
-      respText = j.candidates[0].content.parts[0].text;
+      if (!r.ok) throw new Error("Sunucu yoğun");
+      const raw = await r.text();
+      const jsonMatch = raw.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        const parsed = JSON.parse(jsonMatch[0]);
+        localCache[d.id] = {
+          is_real_bar: typeof parsed.is_real_bar === "boolean" ? parsed.is_real_bar : baseCheck.is_real_bar,
+          type: parsed.type || baseCheck.type,
+          summary: parsed.summary || baseCheck.reason
+        };
+        localStorage.setItem("bar_radar_free_ai", JSON.stringify(localCache));
+        return;
+      }
+    } catch (e) {
+      // Ücretsiz AI sunucusu yanıt vermezse yerel akıllı analiz devreye girer
     }
-    const parsed = JSON.parse(respText);
-    localCache[d.id] = parsed;
-    localStorage.setItem("bar_radar_ai_cache", JSON.stringify(localCache));
-    return parsed;
+
+    localCache[d.id] = {
+      is_real_bar: baseCheck.is_real_bar,
+      type: baseCheck.type,
+      summary: `${baseCheck.reason} (${d.rating}★ / ${d.reviews_count} yorum). Menü ve içki fotoğrafları için Maps bağlantısını aç.`
+    };
+    localStorage.setItem("bar_radar_free_ai", JSON.stringify(localCache));
   }
 
   function render() {
@@ -158,7 +159,7 @@
       const empty = document.createElement("div");
       empty.className = "empty";
       empty.textContent = activeTab === "filtered"
-        ? "Filtreden geçen gerçek kokteyl bar yok. 'Önce Bulunanlar' sekmesine bakabilirsin."
+        ? "Bu filtrede gerçek kokteyl bar kalmadı. 'Önce Bulunanlar (Tümü)' sekmesinden elenen mekanları görebilirsin."
         : "Henüz sonuç yok.";
       list.appendChild(empty);
       return;
@@ -166,7 +167,9 @@
 
     rows.forEach(d => {
       const real = isRealBar(d);
+      const autoInfo = smartClassify(d);
       const ai = localCache[d.id];
+
       const card = document.createElement("div");
       card.className = "card" + (real ? "" : " rejected");
 
@@ -175,7 +178,7 @@
 
       const badge = document.createElement("span");
       badge.className = "badge " + (real ? "ok" : "bad");
-      badge.textContent = ai?.type || d.category || (real ? "Onaylı Bar" : "Elendi (Mobil/Restoran)");
+      badge.textContent = ai?.type || autoInfo.type;
       h.appendChild(badge);
       card.appendChild(h);
 
@@ -186,7 +189,7 @@
 
       const aiBox = document.createElement("div");
       aiBox.className = "ai-box";
-      aiBox.textContent = ai?.summary || d.summary;
+      aiBox.textContent = ai?.summary || `${autoInfo.reason} — ${d.summary || ""}`;
       card.appendChild(aiBox);
 
       if (d.reviews && d.reviews.length) {
@@ -216,16 +219,11 @@
 
       const aiBtn = document.createElement("button");
       aiBtn.className = "btn";
-      aiBtn.textContent = "🤖 AI ile Analiz Et";
+      aiBtn.textContent = "🤖 Ücretsiz AI ile Özetle";
       aiBtn.onclick = async () => {
         aiBtn.textContent = "⏳ Analiz ediliyor...";
-        try {
-          await callAI(d);
-          render();
-        } catch (err) {
-          alert("AI Hatası: " + err.message);
-          aiBtn.textContent = "🤖 AI ile Analiz Et";
-        }
+        await analyzeWithFreeAI(d);
+        render();
       };
       actions.appendChild(aiBtn);
 
@@ -233,8 +231,13 @@
       toggleBtn.className = "btn";
       toggleBtn.textContent = real ? "❌ Bar Değil (Ayır)" : "✅ Gerçek Bar (Onayla)";
       toggleBtn.onclick = () => {
-        localCache[d.id] = {...(localCache[d.id] || {}), is_real_bar: !real, type: !real ? "Manuel Onaylı Bar" : "Manuel Elendi"};
-        localStorage.setItem("bar_radar_ai_cache", JSON.stringify(localCache));
+        localCache[d.id] = {
+          ...(localCache[d.id] || {}),
+          is_real_bar: !real,
+          type: !real ? "Onaylı Kokteyl Bar" : "Elendi (Mobil/Restoran)",
+          summary: (localCache[d.id]?.summary || autoInfo.reason)
+        };
+        localStorage.setItem("bar_radar_free_ai", JSON.stringify(localCache));
         render();
       };
       actions.appendChild(toggleBtn);
@@ -257,25 +260,15 @@
     render();
   };
 
-  document.getElementById("keyBtn").onclick = () => {
-    document.getElementById("apiKeyInput").value = localStorage.getItem("bar_radar_api_key") || "";
-    document.getElementById("keyModal").style.display = "flex";
-  };
-  document.getElementById("closeModal").onclick = () => document.getElementById("keyModal").style.display = "none";
-  document.getElementById("saveKey").onclick = () => {
-    localStorage.setItem("bar_radar_api_key", document.getElementById("apiKeyInput").value.trim());
-    document.getElementById("keyModal").style.display = "none";
-  };
-
   document.getElementById("batchAiBtn").onclick = async () => {
     const btn = document.getElementById("batchAiBtn");
     for (let i = 0; i < data.length; i++) {
-      if (!localCache[data[i].id]) {
-        btn.textContent = `⏳ (${i + 1}/${data.length}) Analiz...`;
-        try { await callAI(data[i]); render(); } catch (e) { alert("AI Hatası: " + e.message); break; }
-      }
+      btn.textContent = `⏳ (${i + 1}/${data.length}) Analiz...`;
+      await analyzeWithFreeAI(data[i]);
+      render();
     }
-    btn.textContent = "⚡ Tümünü AI ile Filtrele";
+    btn.textContent = "✅ Tüm Liste Filtrelendi";
+    setTimeout(() => { btn.textContent = "⚡ Tümünü Ücretsiz AI ile Filtrele"; }, 3000);
   };
 
   q.addEventListener("input", render);

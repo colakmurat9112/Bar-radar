@@ -15,15 +15,11 @@ STATE_PATH = ROOT / "state.json"
 RESULTS_PATH = ROOT / "docs" / "results.json"
 
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
-# YAML'yi değiştirmemek için değişken adını GEMINI_API_KEY olarak çektik ama GROQ için kullanacağız.
-LLM_KEY = os.environ.get("GEMINI_API_KEY", "")
 ACTOR = "compass~crawler-google-places"
 APIFY = "https://api.apify.com/v2"
 
-
 def log(*a):
     print(*a, flush=True)
-
 
 def http(method, url, payload=None, headers=None, timeout=90):
     data = json.dumps(payload).encode("utf-8") if payload is not None else None
@@ -33,7 +29,6 @@ def http(method, url, payload=None, headers=None, timeout=90):
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return json.loads(r.read().decode("utf-8"))
 
-
 def parse_date(s):
     if not s:
         return None
@@ -42,17 +37,14 @@ def parse_date(s):
     except ValueError:
         return None
 
-
 def load_json(path, default):
     if path.exists():
         return json.loads(path.read_text(encoding="utf-8"))
     return default
 
-
 def save_json(path, obj):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(obj, ensure_ascii=False, indent=2), encoding="utf-8")
-
 
 def apify_run(actor_input, max_usd):
     auth = {"Authorization": f"Bearer {APIFY_TOKEN}"}
@@ -77,10 +69,8 @@ def apify_run(actor_input, max_usd):
     log(f"  Apify run {status}, {len(items)} öğe")
     return items
 
-
 def place_id(p):
     return p.get("placeId") or p.get("cid") or p.get("url")
-
 
 def stage1_search(city_query):
     out = []
@@ -100,14 +90,12 @@ def stage1_search(city_query):
         out.extend(items)
     return out
 
-
 def passes_cheap_filter(p):
     if p.get("permanentlyClosed") or p.get("temporarilyClosed"):
         return False
     rating = p.get("totalScore") or 0
     n = p.get("reviewsCount") or 0
     return rating >= CFG["min_rating"] and CFG["min_reviews"] <= n <= CFG["max_reviews_count"]
-
 
 def stage2_reviews(candidates):
     items = apify_run(
@@ -129,59 +117,9 @@ def stage2_reviews(candidates):
             by.setdefault(it.get("placeId") or it.get("placeUrl"), []).append(it)
     return by
 
-
-def summarize(name, city, reviews):
-    texts = []
-    for r in reviews:
-        t = (r.get("text") or r.get("textTranslated") or "").strip()
-        if len(t) >= 20:
-            texts.append(f"[{r.get('stars', '?')}★] {t}")
-    if len(texts) < CFG["min_text_reviews"]:
-        return None
-    blob = ""
-    for t in texts:
-        if len(blob) + len(t) > CFG["max_chars_to_llm"]:
-            break
-        blob += t.replace("\n", " ") + "\n"
-
-    prompt = (
-        f"Aşağıda {city} şehrindeki '{name}' adlı barın Google Maps yorumları var "
-        "(Almanca/İngilizce olabilir).\n"
-        "Görev: Bu mekan neden başarılı? İnsanlar neyi övmüş? "
-        "Türkçe, TAM 3-4 cümle yaz. Hizmet, fiyat/performans ve öne çıkan "
-        "içecek/lezzet/atmosfer detaylarına değin. Yorumlarda olmayan şeyi uydurma. "
-        "Varsa tekrar eden bir şikayeti son cümlede belirt. Başlık, madde işareti, giriş cümlesi yok.\n\n"
-        f"YORUMLAR:\n{blob}"
-    )
-    
-    # Tamamen yeni ve sorunsuz Llama 3 (Groq) API entegrasyonu
-    body = {
-        "model": "llama3-8b-8192",
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.3,
-        "max_tokens": 500
-    }
-    url = "https://api.groq.com/openai/v1/chat/completions"
-    auth = {"Authorization": f"Bearer {LLM_KEY}"}
-    
-    for attempt in range(4):
-        try:
-            data = http("POST", url, body, auth)
-            return data["choices"][0]["message"]["content"].strip()
-        except urllib.error.HTTPError as e:
-            if e.code in (429, 500, 503) and attempt < 3:
-                time.sleep(10 * (attempt + 1))
-                continue
-            log(f"  LLM hata {e.code}")
-            return None
-        except (KeyError, IndexError):
-            return None
-    return None
-
-
 def main():
-    if not APIFY_TOKEN or not LLM_KEY:
-        sys.exit("APIFY_TOKEN ve GEMINI_API_KEY (Groq key olarak) ortam değişkenleri gerekli.")
+    if not APIFY_TOKEN:
+        sys.exit("APIFY_TOKEN ortam değişkeni gerekli.")
 
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=int(CFG["max_age_months"] * 30.4))
@@ -233,11 +171,10 @@ def main():
             state["seen"][pid] = {"status": "old", "first_review": first.date().isoformat()}
             log(f"  {p.get('title')}: ELENDİ (ilk yorum {first.date()})")
             continue
-        summary = summarize(p.get("title", "?"), p["_city"], revs)
-        time.sleep(CFG["llm_sleep_seconds"])
-        if not summary:
-            log(f"  {p.get('title')}: özet çıkmadı, tekrar denenecek")
-            continue
+        
+        # YAPAY ZEKA İPTAL EDİLDİ - DİREKT LİSTEYE EKLİYORUZ
+        summary = f"Mekan filtreden geçti! {p.get('reviewsCount')} yoruma ve {p.get('totalScore')} yıldıza sahip. Menü, ortam ve detaylar için aşağıdaki butondan Google Maps'e git."
+        
         results.append(
             {
                 "id": pid,
@@ -261,7 +198,5 @@ def main():
     save_json(STATE_PATH, state)
     log(f"Bitti. Bu hafta {added} yeni mekan eklendi, toplam {len(results)}.")
 
-
 if __name__ == "__main__":
     main()
-            

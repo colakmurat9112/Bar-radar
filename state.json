@@ -1,1 +1,29 @@
-{"city_idx": 0, "seen": {}}
+{
+  "city_idx": 4,
+  "seen": {
+    "ChIJVXV8VcW9nkcRuvE9o6p3DeU": {
+      "status": "old",
+      "first_review": "2020-02-14"
+    },
+    "ChIJ__8_bGq9nkcRkJIpuV5cYsE": {
+      "status": "old",
+      "first_review": "2018-05-20"
+    },
+    "ChIJ9QnzjGL3r0cRXH9CW8T3zdg": {
+      "status": "old",
+      "first_review": "2022-08-19"
+    },
+    "ChIJy76JQxFXskcR-U70IlM95dY": {
+      "status": "old",
+      "first_review": "2019-08-07"
+    },
+    "ChIJhZeMzrmjnkcR8g2c8oiilKA": {
+      "status": "old",
+      "first_review": "2021-12-18"
+    },
+    "ChIJVxNbOXqZwEcRNMYUORu9XCc": {
+      "status": "old",
+      "first_review": "2015-11-18"
+    }
+  }
+}

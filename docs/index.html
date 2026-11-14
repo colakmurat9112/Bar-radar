@@ -5,64 +5,281 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bar Radar</title>
 <style>
-  body{font:16px/1.5 system-ui,sans-serif;margin:0;background:#14110f;color:#eee}
-  header{padding:20px 16px 8px;max-width:760px;margin:auto}
-  h1{margin:0;font-size:22px}
-  .sub{color:#999;font-size:14px}
-  .bar{max-width:760px;margin:8px auto;padding:0 16px;display:flex;gap:8px}
-  select,input{flex:1;padding:10px;border-radius:8px;border:1px solid #3a332d;background:#1f1a16;color:#eee;font-size:15px}
-  main{max-width:760px;margin:auto;padding:8px 16px 40px}
+  body{font:15px/1.5 system-ui,sans-serif;margin:0;background:#14110f;color:#eee}
+  header{padding:16px 16px 8px;max-width:780px;margin:auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+  h1{margin:0;font-size:21px}
+  .sub{color:#999;font-size:13px;width:100%}
+  .tabs{max-width:780px;margin:8px auto;padding:0 16px;display:flex;gap:8px}
+  .tab{flex:1;padding:10px;border-radius:10px;border:1px solid #3a332d;background:#1f1a16;color:#aaa;font-weight:600;cursor:pointer;text-align:center;font-size:14px}
+  .tab.active{background:#c8923a;color:#14110f;border-color:#c8923a}
+  .bar{max-width:780px;margin:8px auto;padding:0 16px;display:flex;gap:8px;flex-wrap:wrap}
+  select,input{flex:1;min-width:140px;padding:10px;border-radius:8px;border:1px solid #3a332d;background:#1f1a16;color:#eee;font-size:14px}
+  button.btn{background:#2c2520;color:#eee;border:1px solid #4a4039;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600}
+  button.btn-gold{background:#c8923a;color:#14110f;border:none}
+  main{max-width:780px;margin:auto;padding:8px 16px 40px}
   .card{background:#1f1a16;border:1px solid #3a332d;border-radius:12px;padding:14px 16px;margin:12px 0}
-  .card h2{margin:0 0 2px;font-size:18px}
+  .card.rejected{opacity:0.75;border-color:#522}
+  .card h2{margin:0 0 4px;font-size:18px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
   .meta{color:#aaa;font-size:13px;margin-bottom:8px}
-  .new{background:#c8923a;color:#14110f;border-radius:6px;padding:1px 7px;font-size:12px;font-weight:700;margin-left:6px}
-  .card p{margin:8px 0 12px}
-  a.map{display:inline-block;background:#c8923a;color:#14110f;text-decoration:none;font-weight:600;padding:8px 14px;border-radius:8px}
+  .badge{background:#2d2620;color:#c8923a;border:1px solid #c8923a;border-radius:6px;padding:1px 7px;font-size:11px;font-weight:600}
+  .badge.bad{color:#ff8080;border-color:#ff8080;background:#2a1515}
+  .badge.ok{color:#6ee7b7;border-color:#6ee7b7;background:#132a20}
+  .ai-box{background:#161310;border-left:3px solid #c8923a;padding:10px 12px;margin:10px 0;border-radius:6px;font-size:14px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+  a.map{display:inline-block;background:#c8923a;color:#14110f;text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px;font-size:13px}
+  details{margin-top:8px;font-size:13px;color:#bbb}
+  summary{cursor:pointer;color:#c8923a}
+  .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;padding:16px}
+  .modal-content{background:#1f1a16;border:1px solid #3a332d;padding:16px;border-radius:12px;max-width:420px;width:100%}
   .empty{color:#999;text-align:center;margin-top:40px}
 </style>
 </head>
 <body>
 <header>
   <h1>🍸 Bar Radar</h1>
+  <div style="display:flex;gap:6px">
+    <button class="btn btn-gold" id="batchAiBtn">⚡ Tümünü AI ile Filtrele</button>
+    <button class="btn" id="keyBtn">🔑 AI Anahtarı</button>
+  </div>
   <div class="sub" id="stats">Yükleniyor…</div>
 </header>
+
+<div class="tabs">
+  <div class="tab active" id="tabFiltered">🎯 Filtrelenenler (Kokteyl Bar)</div>
+  <div class="tab" id="tabRaw">📋 Önce Bulunanlar (Tümü)</div>
+</div>
+
 <div class="bar">
-  <input id="q" type="search" placeholder="Ara (isim, özet)…">
+  <input id="q" type="search" placeholder="Ara (isim, kategori, özet)…">
   <select id="city"><option value="">Tüm şehirler</option></select>
 </div>
+
 <main id="list"></main>
+
+<div class="modal" id="keyModal">
+  <div class="modal-content">
+    <h3 style="margin-top:0">🤖 AI API Anahtarı</h3>
+    <p style="font-size:13px;color:#aaa">Gemini (<b>AIza...</b>) veya Groq (<b>gsk_...</b>) API anahtarını yapıştır. Sadece senin telefonunda (tarayıcıda) saklanır.</p>
+    <input id="apiKeyInput" type="password" placeholder="AIza... veya gsk_..." style="width:100%;box-sizing:border-box;margin-bottom:10px">
+    <div style="display:flex;gap:8px;justify-content:flex-end">
+      <button class="btn" id="closeModal">Kapat</button>
+      <button class="btn btn-gold" id="saveKey">Kaydet</button>
+    </div>
+  </div>
+</div>
+
 <script>
 (async () => {
   let data = [];
-  try { data = await (await fetch("results.json", {cache: "no-store"})).json(); } catch (e) {}
+  try { data = await (await fetch("results.json?t=" + Date.now(), {cache: "no-store"})).json(); } catch (e) {}
+
+  // Kullanıcının telefonunda yaptığı AI analizlerini ve filtre kararlarını yükle
+  const localCache = JSON.parse(localStorage.getItem("bar_radar_ai_cache") || "{}");
+
   const list = document.getElementById("list"), q = document.getElementById("q"), citySel = document.getElementById("city");
+  let activeTab = "filtered"; // "filtered" veya "raw"
+
+  // Mobil bar, hamburgerci vb. kelimeler (eski results.json kayıtlarını da anında yakalamak için)
+  const badWords = ["mobil", "event", "cater", "burger", "hamburger", "pizza", "shisha", "hookah", "nargile", "döner", "kebab"];
+
+  function isRealBar(d) {
+    if (localCache[d.id] && typeof localCache[d.id].is_real_bar === "boolean") {
+      return localCache[d.id].is_real_bar;
+    }
+    if (typeof d.is_real_bar === "boolean") return d.is_real_bar;
+    const text = ((d.name || "") + " " + (d.category || "") + " " + (d.summary || "")).toLowerCase();
+    return !badWords.some(w => text.includes(w));
+  }
+
   [...new Set(data.map(d => d.city))].sort().forEach(c => {
     const o = document.createElement("option"); o.value = o.textContent = c; citySel.appendChild(o);
   });
-  const weekAgo = Date.now() - 7 * 864e5;
-  function el(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text) e.textContent = text; return e; }
+
+  async function callAI(d) {
+    const key = (localStorage.getItem("bar_radar_api_key") || "").trim();
+    if (!key) {
+      document.getElementById("keyModal").style.display = "flex";
+      return null;
+    }
+    const revs = (d.reviews && d.reviews.length) ? d.reviews.join("\n") : (d.summary || "Yorum metni yok, sadece isim ve kategoriye bak.");
+    const prompt = `Mekan Adı: ${d.name}\nŞehir: ${d.city}\nKategori: ${d.category || "Belirtilmemiş"}\nYorumlar:\n${revs}\n\nGörev: Bu mekan gerçek bir yerleşik kokteyl bar/lounge mı, yoksa mobil bar (catering/event), hamburgerci/restoran, nargileci (shisha) gibi farklı bir yer mi?\nYanıtını SADECE şu JSON formatında ver:\n{"is_real_bar": true veya false, "type": "Kısa Tür (Örn: Kokteyl Bar / Mobil Bar / Hamburgerci / Shisha Lounge)", "summary": "3 cümlelik Türkçe analiz: Mekan gerçekte ne iş yapıyor, hangi kokteyller/içecekler veya özellikler övülmüş, fiyat/performans nasıl?"}`;
+
+    let respText = "";
+    if (key.startsWith("gsk_")) {
+      const r = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {"Content-Type": "application/json", "Authorization": "Bearer " + key},
+        body: JSON.stringify({
+          model: "llama-3.3-70b-versatile",
+          messages: [{role: "user", content: prompt}],
+          temperature: 0.2,
+          response_format: {type: "json_object"}
+        })
+      });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error?.message || r.status);
+      respText = j.choices[0].message.content;
+    } else {
+      const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`, {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+          contents: [{parts: [{text: prompt}]}],
+          generationConfig: {temperature: 0.2, responseMimeType: "application/json"}
+        })
+      });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error?.message || r.status);
+      respText = j.candidates[0].content.parts[0].text;
+    }
+    const parsed = JSON.parse(respText);
+    localCache[d.id] = parsed;
+    localStorage.setItem("bar_radar_ai_cache", JSON.stringify(localCache));
+    return parsed;
+  }
+
   function render() {
     const term = q.value.toLowerCase(), city = citySel.value;
-    const rows = data.filter(d => (!city || d.city === city) && (!term || (d.name + " " + d.summary).toLowerCase().includes(term)));
-    document.getElementById("stats").textContent = data.length + " mekan • gösterilen: " + rows.length;
+    const filteredCount = data.filter(d => isRealBar(d)).length;
+    document.getElementById("tabFiltered").textContent = `🎯 Filtrelenenler (${filteredCount})`;
+    document.getElementById("tabRaw").textContent = `📋 Önce Bulunanlar (${data.length})`;
+
+    const rows = data.filter(d => {
+      if (activeTab === "filtered" && !isRealBar(d)) return false;
+      if (city && d.city !== city) return false;
+      const hay = (d.name + " " + (d.category || "") + " " + (d.summary || "")).toLowerCase();
+      return !term || hay.includes(term);
+    });
+
+    document.getElementById("stats").textContent = `Toplam bulunan: ${data.length} • Gerçek Bar: ${filteredCount} • Gösterilen: ${rows.length}`;
     list.replaceChildren();
-    if (!rows.length) { list.appendChild(el("div", "empty", "Henüz sonuç yok. İlk haftalık çalıştırmayı bekle.")); return; }
+
+    if (!rows.length) {
+      const empty = document.createElement("div");
+      empty.className = "empty";
+      empty.textContent = activeTab === "filtered"
+        ? "Filtreden geçen gerçek kokteyl bar yok. 'Önce Bulunanlar' sekmesine bakabilirsin."
+        : "Henüz sonuç yok.";
+      list.appendChild(empty);
+      return;
+    }
+
     rows.forEach(d => {
-      const card = el("div", "card");
-      const h = el("h2", "", d.name);
-      if (new Date(d.added).getTime() > weekAgo) h.appendChild(el("span", "new", "YENİ"));
+      const real = isRealBar(d);
+      const ai = localCache[d.id];
+      const card = document.createElement("div");
+      card.className = "card" + (real ? "" : " rejected");
+
+      const h = document.createElement("h2");
+      h.textContent = d.name;
+
+      const badge = document.createElement("span");
+      badge.className = "badge " + (real ? "ok" : "bad");
+      badge.textContent = ai?.type || d.category || (real ? "Onaylı Bar" : "Elendi (Mobil/Restoran)");
+      h.appendChild(badge);
       card.appendChild(h);
-      card.appendChild(el("div", "meta", d.city + " • ⭐ " + d.rating + " (" + d.reviews_count + " yorum) • ilk yorum: " + d.first_review));
-      card.appendChild(el("p", "", d.summary));
-      if (/^https:\/\//.test(d.maps_url || "")) {
-        const a = el("a", "map", "Maps'te aç (menü fotoları)");
-        a.href = d.maps_url; a.target = "_blank"; a.rel = "noopener";
-        card.appendChild(a);
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = `${d.city} • ⭐ ${d.rating} (${d.reviews_count} yorum) • İlk yorum: ${d.first_review}`;
+      card.appendChild(meta);
+
+      const aiBox = document.createElement("div");
+      aiBox.className = "ai-box";
+      aiBox.textContent = ai?.summary || d.summary;
+      card.appendChild(aiBox);
+
+      if (d.reviews && d.reviews.length) {
+        const det = document.createElement("details");
+        const sum = document.createElement("summary");
+        sum.textContent = `💬 Müşteri Yorumlarını Gör (${d.reviews.length})`;
+        det.appendChild(sum);
+        d.reviews.forEach(r => {
+          const p = document.createElement("p");
+          p.style.margin = "6px 0";
+          p.textContent = r;
+          det.appendChild(p);
+        });
+        card.appendChild(det);
       }
+
+      const actions = document.createElement("div");
+      actions.className = "actions";
+
+      if (d.maps_url) {
+        const a = document.createElement("a");
+        a.className = "map";
+        a.href = d.maps_url; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = "📍 Maps'te Aç (Menü)";
+        actions.appendChild(a);
+      }
+
+      const aiBtn = document.createElement("button");
+      aiBtn.className = "btn";
+      aiBtn.textContent = "🤖 AI ile Analiz Et";
+      aiBtn.onclick = async () => {
+        aiBtn.textContent = "⏳ Analiz ediliyor...";
+        try {
+          await callAI(d);
+          render();
+        } catch (err) {
+          alert("AI Hatası: " + err.message);
+          aiBtn.textContent = "🤖 AI ile Analiz Et";
+        }
+      };
+      actions.appendChild(aiBtn);
+
+      const toggleBtn = document.createElement("button");
+      toggleBtn.className = "btn";
+      toggleBtn.textContent = real ? "❌ Bar Değil (Ayır)" : "✅ Gerçek Bar (Onayla)";
+      toggleBtn.onclick = () => {
+        localCache[d.id] = {...(localCache[d.id] || {}), is_real_bar: !real, type: !real ? "Manuel Onaylı Bar" : "Manuel Elendi"};
+        localStorage.setItem("bar_radar_ai_cache", JSON.stringify(localCache));
+        render();
+      };
+      actions.appendChild(toggleBtn);
+
+      card.appendChild(actions);
       list.appendChild(card);
     });
   }
-  q.addEventListener("input", render); citySel.addEventListener("change", render);
+
+  document.getElementById("tabFiltered").onclick = () => {
+    activeTab = "filtered";
+    document.getElementById("tabFiltered").classList.add("active");
+    document.getElementById("tabRaw").classList.remove("active");
+    render();
+  };
+  document.getElementById("tabRaw").onclick = () => {
+    activeTab = "raw";
+    document.getElementById("tabRaw").classList.add("active");
+    document.getElementById("tabFiltered").classList.remove("active");
+    render();
+  };
+
+  document.getElementById("keyBtn").onclick = () => {
+    document.getElementById("apiKeyInput").value = localStorage.getItem("bar_radar_api_key") || "";
+    document.getElementById("keyModal").style.display = "flex";
+  };
+  document.getElementById("closeModal").onclick = () => document.getElementById("keyModal").style.display = "none";
+  document.getElementById("saveKey").onclick = () => {
+    localStorage.setItem("bar_radar_api_key", document.getElementById("apiKeyInput").value.trim());
+    document.getElementById("keyModal").style.display = "none";
+  };
+
+  document.getElementById("batchAiBtn").onclick = async () => {
+    const btn = document.getElementById("batchAiBtn");
+    for (let i = 0; i < data.length; i++) {
+      if (!localCache[data[i].id]) {
+        btn.textContent = `⏳ (${i + 1}/${data.length}) Analiz...`;
+        try { await callAI(data[i]); render(); } catch (e) { alert("AI Hatası: " + e.message); break; }
+      }
+    }
+    btn.textContent = "⚡ Tümünü AI ile Filtrele";
+  };
+
+  q.addEventListener("input", render);
+  citySel.addEventListener("change", render);
   render();
 })();
 </script>

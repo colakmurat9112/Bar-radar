@@ -15,7 +15,8 @@ STATE_PATH = ROOT / "state.json"
 RESULTS_PATH = ROOT / "docs" / "results.json"
 
 APIFY_TOKEN = os.environ.get("APIFY_TOKEN", "")
-GEMINI_KEY = os.environ.get("GEMINI_API_KEY", "")
+# YAML'yi değiştirmemek için değişken adını GEMINI_API_KEY olarak çektik ama GROQ için kullanacağız.
+LLM_KEY = os.environ.get("GEMINI_API_KEY", "")
 ACTOR = "compass~crawler-google-places"
 APIFY = "https://api.apify.com/v2"
 
@@ -152,21 +153,26 @@ def summarize(name, city, reviews):
         "Varsa tekrar eden bir şikayeti son cümlede belirt. Başlık, madde işareti, giriş cümlesi yok.\n\n"
         f"YORUMLAR:\n{blob}"
     )
-    gen = {"temperature": 0.3, "maxOutputTokens": 500}
-    if "2.5" in CFG["gemini_model"]:
-        gen["thinkingConfig"] = {"thinkingBudget": 0}
-    body = {"contents": [{"parts": [{"text": prompt}]}], "generationConfig": gen}
     
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/{CFG['gemini_model']}:generateContent?key={GEMINI_KEY}"
+    # Tamamen yeni ve sorunsuz Llama 3 (Groq) API entegrasyonu
+    body = {
+        "model": "llama3-8b-8192",
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.3,
+        "max_tokens": 500
+    }
+    url = "https://api.groq.com/openai/v1/chat/completions"
+    auth = {"Authorization": f"Bearer {LLM_KEY}"}
+    
     for attempt in range(4):
         try:
-            data = http("POST", url, body)
-            return data["candidates"][0]["content"]["parts"][0]["text"].strip()
+            data = http("POST", url, body, auth)
+            return data["choices"][0]["message"]["content"].strip()
         except urllib.error.HTTPError as e:
             if e.code in (429, 500, 503) and attempt < 3:
-                time.sleep(20 * (attempt + 1))
+                time.sleep(10 * (attempt + 1))
                 continue
-            log(f"  Gemini hata {e.code}")
+            log(f"  LLM hata {e.code}")
             return None
         except (KeyError, IndexError):
             return None
@@ -174,8 +180,8 @@ def summarize(name, city, reviews):
 
 
 def main():
-    if not APIFY_TOKEN or not GEMINI_KEY:
-        sys.exit("APIFY_TOKEN ve GEMINI_API_KEY ortam değişkenleri gerekli.")
+    if not APIFY_TOKEN or not LLM_KEY:
+        sys.exit("APIFY_TOKEN ve GEMINI_API_KEY (Groq key olarak) ortam değişkenleri gerekli.")
 
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=int(CFG["max_age_months"] * 30.4))
@@ -258,3 +264,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+            

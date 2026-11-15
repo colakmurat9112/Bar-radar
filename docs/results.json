@@ -133,6 +133,54 @@
     "added": "2026-11-15"
   },
   {
+    "id": "https://www.google.com/maps/place/Pub%26Go+Cottbus/data=!4m7!3m6!1s0x470875548d9ddfb3:0x6e6e0f32faaa2682!8m2!3d51.7596564!4d14.3353834!16s%2Fg%2F11nw5k239q!19sChIJs9-djVR1CEcRgiaq-jIPbm4",
+    "name": "Pub&Go Cottbus",
+    "city": "Cottbus",
+    "category": "Pub&Go Cottbus",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.9,
+    "reviews_count": 27,
+    "first_review": "Yeni/Popüler (27 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Pub&Go Cottbus • Kokteyl Bar / Lounge. (4.9★ / 27 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Pub%26Go+Cottbus/data=!4m7!3m6!1s0x470875548d9ddfb3:0x6e6e0f32faaa2682!8m2!3d51.7596564!4d14.3353834!16s%2Fg%2F11nw5k239q!19sChIJs9-djVR1CEcRgiaq-jIPbm4",
+    "added": "2026-11-15"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Bogenwerk+Caf%C3%A9+%26+Bar/data=!4m7!3m6!1s0x4708dd562c6f6a87:0xe65d765fc2c7803f!8m2!3d51.1567499!4d14.9914408!16s%2Fg%2F11z5rs7wkv!19sChIJh2pvLFbdCEcRP4DHwl92XeY",
+    "name": "Bogenwerk Café & Bar",
+    "city": "Görlitz",
+    "category": "Bogenwerk Café & Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.9,
+    "reviews_count": 38,
+    "first_review": "Yeni/Popüler (38 yorum)",
+    "reviews": [
+      "Super Nice café. Great service and really tasty coffee",
+      "Super Nice café. Great service and really tasty coffee",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Bogenwerk Café & Bar • Kokteyl Bar / Lounge. (4.9★ / 38 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Bogenwerk+Caf%C3%A9+%26+Bar/data=!4m7!3m6!1s0x4708dd562c6f6a87:0xe65d765fc2c7803f!8m2!3d51.1567499!4d14.9914408!16s%2Fg%2F11z5rs7wkv!19sChIJh2pvLFbdCEcRP4DHwl92XeY",
+    "added": "2026-11-15"
+  },
+  {
     "id": "https://www.google.com/maps/place/Skylounge+am+Theater/data=!4m7!3m6!1s0x47a41be94a0ce211:0xb61a4a6f93700922!8m2!3d50.9800583!4d11.3252075!16s%2Fg%2F11yk73nrx_!19sChIJEeIMSukbpEcRIglwk29KGrY",
     "name": "Skylounge am Theater",
     "city": "Weimar",
@@ -178,6 +226,30 @@
     ],
     "summary": "Kategori: Bar • Kokteyl Bar / Lounge. (4.8★ / 38 yorum).",
     "maps_url": "https://www.google.com/maps/place/Alte+Liebe+Vinothek/data=!4m7!3m6!1s0x47a41b0001c4d7bd:0xcb2fa8edab995e3a!8m2!3d50.9807388!4d11.3298993!16s%2Fg%2F11lf1pbb2b!19sChIJvdfEAQAbpEcROl6Zq-2oL8s",
+    "added": "2026-11-15"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Black+In/data=!4m7!3m6!1s0x470874753e211ee1:0xfc10e4b71f7705c5!8m2!3d51.7411867!4d14.334121!16s%2Fg%2F1q665m31r!19sChIJ4R4hPnV0CEcRxQV3H7fkEPw",
+    "name": "Black In",
+    "city": "Cottbus",
+    "category": "Gastropub·",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.8,
+    "reviews_count": 43,
+    "first_review": "Yeni/Popüler (43 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Gastropub· • Kokteyl Bar / Lounge. (4.8★ / 43 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Black+In/data=!4m7!3m6!1s0x470874753e211ee1:0xfc10e4b71f7705c5!8m2!3d51.7411867!4d14.334121!16s%2Fg%2F1q665m31r!19sChIJ4R4hPnV0CEcRxQV3H7fkEPw",
     "added": "2026-11-15"
   },
   {
@@ -229,6 +301,54 @@
     "added": "2026-11-15"
   },
   {
+    "id": "https://www.google.com/maps/place/Restaurant+Gummistiefel+im+Victor%27s+Residenz-Hotel+Gera/data=!4m7!3m6!1s0x47a6cf68f6851ea7:0x38795a2cce1aa2fc!8m2!3d50.8865454!4d12.0829988!16s%2Fg%2F11x8_25yxv!19sChIJpx6F9mjPpkcR_KIazixaeTg",
+    "name": "Restaurant Gummistiefel im Victor's Residenz-Hotel Gera",
+    "city": "Gera",
+    "category": "Restaurant·",
+    "is_real_bar": false,
+    "filter_reason": "Filtre (hotel)",
+    "rating": 4.6,
+    "reviews_count": 39,
+    "first_review": "Yeni/Popüler (39 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Restaurant· • Filtre (hotel). (4.6★ / 39 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Restaurant+Gummistiefel+im+Victor%27s+Residenz-Hotel+Gera/data=!4m7!3m6!1s0x47a6cf68f6851ea7:0x38795a2cce1aa2fc!8m2!3d50.8865454!4d12.0829988!16s%2Fg%2F11x8_25yxv!19sChIJpx6F9mjPpkcR_KIazixaeTg",
+    "added": "2026-11-15"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Destille+Schwarzbrennerei/data=!4m7!3m6!1s0x47a72d0841b92f87:0x7b70321fbd6f9691!8m2!3d50.7171652!4d12.4944816!16s%2Fg%2F11vkk2vqtq!19sChIJhy-5QQgtp0cRkZZvvR8ycHs",
+    "name": "Destille Schwarzbrennerei",
+    "city": "Zwickau",
+    "category": "Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.5,
+    "reviews_count": 38,
+    "first_review": "Yeni/Popüler (38 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Bar • Kokteyl Bar / Lounge. (4.5★ / 38 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Destille+Schwarzbrennerei/data=!4m7!3m6!1s0x47a72d0841b92f87:0x7b70321fbd6f9691!8m2!3d50.7171652!4d12.4944816!16s%2Fg%2F11vkk2vqtq!19sChIJhy-5QQgtp0cRkZZvvR8ycHs",
+    "added": "2026-11-15"
+  },
+  {
     "id": "https://www.google.com/maps/place/Bu%C3%B1uel/data=!4m7!3m6!1s0x47a663601627aa35:0xbf78fcffafedacfc!8m2!3d51.4856234!4d11.9665957!16s%2Fg%2F11wj143878!19sChIJNaonFmBjpkcR_Kztr__8eL8",
     "name": "Buñuel",
     "city": "Halle (Saale)",
@@ -265,6 +385,30 @@
     "reviews": [],
     "summary": "Kategori: Bar MOZART / Chemnitz • Kokteyl Bar / Lounge. (4.4★ / 40 yorum).",
     "maps_url": "https://www.google.com/maps/place/Bar+MOZART+%2F+Chemnitz/data=!4m7!3m6!1s0x47a7465fc17aa491:0x1c2bf8e77a49a42f!8m2!3d50.8373487!4d12.926547!16s%2Fg%2F11c5rp_h9c!19sChIJkaR6wV9Gp0cRL6RJeuf4Kxw",
+    "added": "2026-11-15"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Kiosk+Bar/data=!4m7!3m6!1s0x470875f7324b65f3:0xe32464294722da53!8m2!3d51.7605346!4d14.335211!16s%2Fg%2F11z5wwj78g!19sChIJ82VLMvd1CEcRU9oiRylkJOM",
+    "name": "Kiosk Bar",
+    "city": "Cottbus",
+    "category": "Kiosk Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.2,
+    "reviews_count": 17,
+    "first_review": "Yeni/Popüler (17 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Kiosk Bar • Kokteyl Bar / Lounge. (4.2★ / 17 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Kiosk+Bar/data=!4m7!3m6!1s0x470875f7324b65f3:0xe32464294722da53!8m2!3d51.7605346!4d14.335211!16s%2Fg%2F11z5wwj78g!19sChIJ82VLMvd1CEcRU9oiRylkJOM",
     "added": "2026-11-15"
   }
 ]

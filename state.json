@@ -1,5 +1,5 @@
 {
-  "city_idx": 8,
+  "city_idx": 12,
   "seen": {
     "https://www.google.com/maps/place/Shinto+Bar+%26+Lounge/data=!4m7!3m6!1s0x47a6f81f1688f6af:0xd04915b22a1aeb98!8m2!3d51.3466704!4d12.3755216!16s%2Fg%2F1tdb_nxf!19sChIJr_aIFh_4pkcRmOsaKrIVSdA": {
       "status": "old"
@@ -72,6 +72,42 @@
     },
     "https://www.google.com/maps/place/Papperla-Pub/data=!4m7!3m6!1s0x47a6a8960a71ff0f:0x26578df66dba3b0a!8m2!3d50.9242311!4d11.5772198!16s%2Fg%2F11h6nglj4z!19sChIJD_9xCpaopkcRCju6bfaNVyY": {
       "status": "old"
+    },
+    "https://www.google.com/maps/place/Toni+Pils+Eck/data=!4m7!3m6!1s0x47a72dc48d6b1b31:0x972d01ff675b4ab!8m2!3d50.6949393!4d12.4688153!16s%2Fg%2F11p0ldsg0j!19sChIJMRtrjcQtp0cRq7R19h_Qcgk": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Kiosk+Bar/data=!4m7!3m6!1s0x470875f7324b65f3:0xe32464294722da53!8m2!3d51.7605346!4d14.335211!16s%2Fg%2F11z5wwj78g!19sChIJ82VLMvd1CEcRU9oiRylkJOM": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Andy%27s+Bierbar/data=!4m7!3m6!1s0x47a6c671cdec2d33:0x22f13cafba5b0582!8m2!3d50.9202758!4d12.0519574!16s%2Fg%2F1tkd__0y!19sChIJMy3szXHGpkcRggVbuq888SI": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Havanna+Lounge/data=!4m7!3m6!1s0x47a6cf67c1a2e4e5:0x43c98b79f34d3fce!8m2!3d50.8793369!4d12.0786046!16s%2Fg%2F11cnd9qgbh!19sChIJ5eSiwWfPpkcRzj9N83mLyUM": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Pub%26Go+Cottbus/data=!4m7!3m6!1s0x470875548d9ddfb3:0x6e6e0f32faaa2682!8m2!3d51.7596564!4d14.3353834!16s%2Fg%2F11nw5k239q!19sChIJs9-djVR1CEcRgiaq-jIPbm4": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Afzal%27s+Bierstube/data=!4m7!3m6!1s0x47a72c54439ae675:0x78b048f1e5d65013!8m2!3d50.7215418!4d12.4921502!16s%2Fg%2F11h2p_mcm9!19sChIJdeaaQ1Qsp0cRE1DW5fFIsHg": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Life+Table-Dance+Bar+%26+Nachtcaf%C3%A9/data=!4m7!3m6!1s0x4708746ec45336e5:0x66f4466ff886a8ec!8m2!3d51.7550248!4d14.3328127!16s%2Fg%2F1tfdxkf0!19sChIJ5TZTxG50CEcR7KiG-G9G9GY": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Destille+Schwarzbrennerei/data=!4m7!3m6!1s0x47a72d0841b92f87:0x7b70321fbd6f9691!8m2!3d50.7171652!4d12.4944816!16s%2Fg%2F11vkk2vqtq!19sChIJhy-5QQgtp0cRkZZvvR8ycHs": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Bogenwerk+Caf%C3%A9+%26+Bar/data=!4m7!3m6!1s0x4708dd562c6f6a87:0xe65d765fc2c7803f!8m2!3d51.1567499!4d14.9914408!16s%2Fg%2F11z5rs7wkv!19sChIJh2pvLFbdCEcRP4DHwl92XeY": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Restaurant+Gummistiefel+im+Victor%27s+Residenz-Hotel+Gera/data=!4m7!3m6!1s0x47a6cf68f6851ea7:0x38795a2cce1aa2fc!8m2!3d50.8865454!4d12.0829988!16s%2Fg%2F11x8_25yxv!19sChIJpx6F9mjPpkcR_KIazixaeTg": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Der+Laden/data=!4m7!3m6!1s0x47a6cf1c388573f7:0x103fa2f9143735ee!8m2!3d50.8506802!4d12.072922!16s%2Fg%2F11b8tx8m15!19sChIJ93OFOBzPpkcR7jU3FPmiPxA": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Black+In/data=!4m7!3m6!1s0x470874753e211ee1:0xfc10e4b71f7705c5!8m2!3d51.7411867!4d14.334121!16s%2Fg%2F1q665m31r!19sChIJ4R4hPnV0CEcRxQV3H7fkEPw": {
+      "status": "ok"
     }
   }
 }

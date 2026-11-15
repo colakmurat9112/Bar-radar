@@ -1,5 +1,5 @@
 {
-  "city_idx": 12,
+  "city_idx": 16,
   "seen": {
     "https://www.google.com/maps/place/Shinto+Bar+%26+Lounge/data=!4m7!3m6!1s0x47a6f81f1688f6af:0xd04915b22a1aeb98!8m2!3d51.3466704!4d12.3755216!16s%2Fg%2F1tdb_nxf!19sChIJr_aIFh_4pkcRmOsaKrIVSdA": {
       "status": "old"
@@ -107,6 +107,42 @@
       "status": "old"
     },
     "https://www.google.com/maps/place/Black+In/data=!4m7!3m6!1s0x470874753e211ee1:0xfc10e4b71f7705c5!8m2!3d51.7411867!4d14.334121!16s%2Fg%2F1q665m31r!19sChIJ4R4hPnV0CEcRxQV3H7fkEPw": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Nova/data=!4m7!3m6!1s0x47b209ae34b8b093:0x243c06bf84a1926d!8m2!3d53.8668316!4d10.6808784!16s%2Fg%2F11zd45xj5_!19sChIJk7C4NK4JskcRbZKhhL8GPCQ": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Austausch+Bar/data=!4m7!3m6!1s0x47b209001d5b2d6f:0xa341a616ac34313c!8m2!3d53.8675175!4d10.6912807!16s%2Fg%2F11xgfv5dxy!19sChIJby1bHQAJskcRPDE0rBamQaM": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/bittersweet./data=!4m7!3m6!1s0x47b2091dea974cdb:0xeaadc022a9b19442!8m2!3d53.8660319!4d10.6921808!16s%2Fg%2F11nb1lk5mx!19sChIJ20yX6h0JskcRQpSxqSLAreo": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Spielunke/data=!4m7!3m6!1s0x47ac570036930c4f:0x67a13e0e9dabbc91!8m2!3d54.0871633!4d12.1103732!16s%2Fg%2F11yq94_x9h!19sChIJTwyTNgBXrEcRkbyrnQ4-oWc": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/L%C3%BCbecker+Eck/data=!4m7!3m6!1s0x47b20d00444cfa97:0xe7a28136fb4d8f62!8m2!3d53.874891!4d10.6723778!16s%2Fg%2F11yvg2lt1p!19sChIJl_pMRAANskcRYo9N-zaBouc": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Room+55+Caf%C3%A9+%26+Bar/data=!4m7!3m6!1s0x47b20927404665cf:0x75e297ddcca13871!8m2!3d53.8698232!4d10.6856913!16s%2Fg%2F11z7n7kwzk!19sChIJz2VGQCcJskcRcTihzN2X4nU": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Bar+Olga/data=!4m7!3m6!1s0x47a8f5b17b515f6b:0xbfc0ed0216472242!8m2!3d52.3992704!4d13.054964!16s%2Fg%2F11t5npn2wj!19sChIJa19Re7H1qEcRQiJHFgLtwL8": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Desaster/data=!4m7!3m6!1s0x47ac5710dcfb1835:0x41a9384aa9c9e6cb!8m2!3d54.0871648!4d12.1099088!16s%2Fg%2F11ydl97h_h!19sChIJNRj73BBXrEcRy-bJqUo4qUE": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Allegro+Bar+Svetlana+T%C3%B6be/data=!4m7!3m6!1s0x47b2095a2e2e8c73:0x48623405bb1cac66!8m2!3d53.8645427!4d10.687267!16s%2Fg%2F1txy1d13!19sChIJc4wuLloJskcRZqwcuwU0Ykg": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Prestige+Caf%C3%A9+%26+Bar/data=!4m7!3m6!1s0x47b20d5d36bc5af1:0x3535b9ba7e888c4f!8m2!3d53.8784039!4d10.6614464!16s%2Fg%2F11z8tkhb52!19sChIJ8Vq8Nl0NskcRT4yIfrq5NTU": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/M55+BAR+%26+RESTAURANT/data=!4m7!3m6!1s0x47addb81b8f81619:0x4368e5145e9760a4!8m2!3d53.6304903!4d11.4158719!16s%2Fg%2F11z4bzz88s!19sChIJGRb4uIHbrUcRpGCXXhTlaEM": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Meilenstein+Bar/data=!4m7!3m6!1s0x47b2098b741c86ef:0x80fb1b2f3cfe759b!8m2!3d53.8689204!4d10.6885519!16s%2Fg%2F11yg_7cq6q!19sChIJ74YcdIsJskcRm3X-PC8b-4A": {
       "status": "ok"
     }
   }

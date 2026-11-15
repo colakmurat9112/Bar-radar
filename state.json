@@ -1,1 +1,41 @@
-{"city_idx": 0, "seen": {}}
+{
+  "city_idx": 4,
+  "seen": {
+    "https://www.google.com/maps/place/Shinto+Bar+%26+Lounge/data=!4m7!3m6!1s0x47a6f81f1688f6af:0xd04915b22a1aeb98!8m2!3d51.3466704!4d12.3755216!16s%2Fg%2F1tdb_nxf!19sChIJr_aIFh_4pkcRmOsaKrIVSdA": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Benno+Bar/data=!4m7!3m6!1s0x4709cf85644d4b4d:0xb57a11ad99e788ef!8m2!3d51.0611204!4d13.7421065!16s%2Fg%2F11ry2sgwly!19sChIJTUtNZIXPCUcR74jnma0RerU": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Tiefgang+-+Cocktail-+und+Spielebar+in+Dresden/data=!4m7!3m6!1s0x4709cf3f7f8d3cf5:0x2c02ebbc6eb450e4!8m2!3d51.0618641!4d13.7493649!16s%2Fg%2F12mkvmxbq!19sChIJ9TyNfz_PCUcR5FC0brzrAiw": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Bu%C3%B1uel/data=!4m7!3m6!1s0x47a663601627aa35:0xbf78fcffafedacfc!8m2!3d51.4856234!4d11.9665957!16s%2Fg%2F11wj143878!19sChIJNaonFmBjpkcR_Kztr__8eL8": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Bierakademie+Live+Music+Bar/data=!4m7!3m6!1s0x47a6f93cd2f4f359:0x46c0e8b1d7ec23a0!8m2!3d51.3350514!4d12.3798538!16s%2Fg%2F11mv4qsx9x!19sChIJWfP00jz5pkcRoCPs17HowEY": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Capital+Lounge/data=!4m7!3m6!1s0x47a7470043f9cdcd:0xa14d077910733ccb!8m2!3d50.8353445!4d12.9220571!16s%2Fg%2F11z519bxfr!19sChIJzc35QwBHp0cRyzxzEHkHTaE": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Volt+Bar/data=!4m7!3m6!1s0x4709cf16565e7a5d:0xa7d61b703a5838ac!8m2!3d51.0530343!4d13.7243936!16s%2Fg%2F11kdr7yn3k!19sChIJXXpeVhbPCUcRrDhYOnAb1qc": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Onkel+Emma/data=!4m7!3m6!1s0x47a66300430d3b97:0x5257d8c746c919ef!8m2!3d51.4929828!4d11.9793034!16s%2Fg%2F11xmnglfy9!19sChIJlzsNQwBjpkcR7xnJRsfYV1I": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Black+Diamond+Pub+Chemnitz/data=!4m7!3m6!1s0x47a747b1389a934f:0xd74d0f682de933c1!8m2!3d50.8374974!4d12.9007887!16s%2Fg%2F11y570fpkt!19sChIJT5OaOLFHp0cRwTPpLWgPTdc": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Christels+Bier-Pub+-+Chemnitz/data=!4m7!3m6!1s0x47a746656816cf31:0x60c9e90ab8969942!8m2!3d50.8279301!4d12.9359955!16s%2Fg%2F11h0z98lt8!19sChIJMc8WaGVGp0cRQpmWuArpyWA": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/No+Limit+Party+Bar/data=!4m7!3m6!1s0x4709cf0021c9691f:0x962b0c4557540102!8m2!3d51.0663!4d13.7506499!16s%2Fg%2F11nw80ywf3!19sChIJH2nJIQDPCUcRAgFUV0UMK5Y": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Bar+MOZART+%2F+Chemnitz/data=!4m7!3m6!1s0x47a7465fc17aa491:0x1c2bf8e77a49a42f!8m2!3d50.8373487!4d12.926547!16s%2Fg%2F11c5rp_h9c!19sChIJkaR6wV9Gp0cRL6RJeuf4Kxw": {
+      "status": "ok"
+    }
+  }
+}

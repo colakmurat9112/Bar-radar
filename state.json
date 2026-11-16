@@ -1,5 +1,5 @@
 {
-  "city_idx": 16,
+  "city_idx": 20,
   "seen": {
     "https://www.google.com/maps/place/Shinto+Bar+%26+Lounge/data=!4m7!3m6!1s0x47a6f81f1688f6af:0xd04915b22a1aeb98!8m2!3d51.3466704!4d12.3755216!16s%2Fg%2F1tdb_nxf!19sChIJr_aIFh_4pkcRmOsaKrIVSdA": {
       "status": "old"
@@ -143,6 +143,42 @@
       "status": "ok"
     },
     "https://www.google.com/maps/place/Meilenstein+Bar/data=!4m7!3m6!1s0x47b2098b741c86ef:0x80fb1b2f3cfe759b!8m2!3d53.8689204!4d10.6885519!16s%2Fg%2F11yg_7cq6q!19sChIJ74YcdIsJskcRm3X-PC8b-4A": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Bull%27s+Eye/data=!4m7!3m6!1s0x47b34332edce8195:0xd557059bd11e2710!8m2!3d54.8113708!4d9.4615884!16s%2Fg%2F11kqqrdw9r!19sChIJlYHO7TJDs0cRECce0ZsFV9U": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/COCO+VIBES/data=!4m7!3m6!1s0x47b6df00725caab3:0x231ababd74c12607!8m2!3d53.1493331!4d8.2268514!16s%2Fg%2F11xh2mx7sl!19sChIJs6pccgDftkcRBybBdL26GiM": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Zapferei/data=!4m7!3m6!1s0x47b6dfaab7ce6be1:0x8c96dd7d75099add!8m2!3d53.1426117!4d8.2125398!16s%2Fg%2F11zc2n996z!19sChIJ4WvOt6rftkcR3ZoJdX3dlow": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Soll+%26+Haben+-+die+Bar+im+Kieler+Kaufmann/data=!4m7!3m6!1s0x47b257a3171710b3:0x37d0c7582f42d173!8m2!3d54.3386852!4d10.1515578!16s%2Fg%2F11mw5wdfgj!19sChIJsxAXF6NXskcRc9FCL1jH0Dc": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Margaux+Bar+%26+Restaurant/data=!4m7!3m6!1s0x47b9e5e5c2c46f9d:0x1bc445105c74f8cf!8m2!3d52.2778817!4d8.0426723!16s%2Fg%2F11yyzfzc7v!19sChIJnW_EwuXluUcRz_h0XBBFxBs": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/HIIVE+%E2%80%93+Oh+Honey/data=!4m7!3m6!1s0x47b6df96cc593be1:0xa519be1661bd07f5!8m2!3d53.1413008!4d8.2202225!16s%2Fg%2F11sk8b6yym!19sChIJ4TtZzJbftkcR9Qe9YRa-GaU": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Jay-ZZ/data=!4m7!3m6!1s0x47b34389bd5b7117:0x3f7458a4f098be10!8m2!3d54.7900545!4d9.433393!16s%2Fg%2F11vkjtbhzw!19sChIJF3FbvYlDs0cREL6Y8KRYdD8": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Tipsy+Baker/data=!4m7!3m6!1s0x47b6df00708da501:0xcfce88d2113fce3a!8m2!3d53.1426559!4d8.2114591!16s%2Fg%2F11zdjgwy06!19sChIJAaWNcADftkcROs4_EdKIzs8": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Coup+d%E2%80%98Etat/data=!4m7!3m6!1s0x47b6dffaf8baff31:0xdd1d6731ac69b496!8m2!3d53.139977!4d8.2114754!16s%2Fg%2F11lcf4mbsb!19sChIJMf-6-PrftkcRlrRprDFnHd0": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Hafen+Pub/data=!4m7!3m6!1s0x47b343000a293367:0x1095524dab791b3b!8m2!3d54.7899236!4d9.4333813!16s%2Fg%2F11n4svg8w6!19sChIJZzMpCgBDs0cROxt5q01SlRA": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Sound-Bar+Oldenburg/data=!4m7!3m6!1s0x47b6dfc3b2825be7:0xa883288627ef6c72!8m2!3d53.1517268!4d8.2171008!16s%2Fg%2F11z8k5pcmx!19sChIJ51uCssPftkcRcmzvJ4Yog6g": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Luft+und+Liebe+Oldenburg/data=!4m7!3m6!1s0x47b6dfd0e6972ef9:0x14fa730fd06350de!8m2!3d53.1425028!4d8.2121908!16s%2Fg%2F11xccngc9t!19sChIJ-S6X5tDftkcR3lBj0A9z-hQ": {
       "status": "ok"
     }
   }

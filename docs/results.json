@@ -63,6 +63,78 @@
     "added": "2026-11-16"
   },
   {
+    "id": "https://www.google.com/maps/place/Tulpe/data=!4m7!3m6!1s0x47ba4d003b9f2419:0xc8f4e52824e48cbb!8m2!3d51.7181125!4d8.7488324!16s%2Fg%2F11zyj_z6z2!19sChIJGSSfOwBNukcRu4zkJCjl9Mg",
+    "name": "Tulpe",
+    "city": "Paderborn",
+    "category": "Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 5.0,
+    "reviews_count": 15,
+    "first_review": "Yeni/Popüler (15 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Bar • Kokteyl Bar / Lounge. (5.0★ / 15 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Tulpe/data=!4m7!3m6!1s0x47ba4d003b9f2419:0xc8f4e52824e48cbb!8m2!3d51.7181125!4d8.7488324!16s%2Fg%2F11zyj_z6z2!19sChIJGSSfOwBNukcRu4zkJCjl9Mg",
+    "added": "2026-11-16"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Schickeria+Bielefeld/data=!4m7!3m6!1s0x47ba3d00187562f3:0xe5017cca51d1928c!8m2!3d52.0191864!4d8.530269!16s%2Fg%2F11yrm5lkb2!19sChIJ82J1GAA9ukcRjJLRUcp8AeU",
+    "name": "Schickeria Bielefeld",
+    "city": "Bielefeld",
+    "category": "Bar·",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 5.0,
+    "reviews_count": 17,
+    "first_review": "Yeni/Popüler (17 yorum)",
+    "reviews": [
+      "Great place, wonderful and friendly staff!",
+      "Great place, wonderful and friendly staff!",
+      "Was so nice and good music",
+      "Was so nice and good music",
+      "Amryl is really a super host .. awesome venue, good music",
+      "Amryl is really a super host .. awesome venue, good music",
+      "Met chuck norris but he was busy talking to the pope",
+      "Met chuck norris but he was busy talking to the pope"
+    ],
+    "summary": "Kategori: Bar· • Kokteyl Bar / Lounge. (5.0★ / 17 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Schickeria+Bielefeld/data=!4m7!3m6!1s0x47ba3d00187562f3:0xe5017cca51d1928c!8m2!3d52.0191864!4d8.530269!16s%2Fg%2F11yrm5lkb2!19sChIJ82J1GAA9ukcRjJLRUcp8AeU",
+    "added": "2026-11-16"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Goldbar+-+Paderborn/data=!4m7!3m6!1s0x47ba4d2469de2c89:0xe4b795e90f591668!8m2!3d51.7300523!4d8.7644865!16s%2Fg%2F11z9phf_py!19sChIJiSzeaSRNukcRaBZZD-mVt-Q",
+    "name": "Goldbar - Paderborn",
+    "city": "Paderborn",
+    "category": "Goldbar - Paderborn",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 5.0,
+    "reviews_count": 30,
+    "first_review": "Yeni/Popüler (30 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Goldbar - Paderborn • Kokteyl Bar / Lounge. (5.0★ / 30 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Goldbar+-+Paderborn/data=!4m7!3m6!1s0x47ba4d2469de2c89:0xe4b795e90f591668!8m2!3d51.7300523!4d8.7644865!16s%2Fg%2F11z9phf_py!19sChIJiSzeaSRNukcRaBZZD-mVt-Q",
+    "added": "2026-11-16"
+  },
+  {
     "id": "https://www.google.com/maps/place/Zapferei/data=!4m7!3m6!1s0x47b6dfaab7ce6be1:0x8c96dd7d75099add!8m2!3d53.1426117!4d8.2125398!16s%2Fg%2F11zc2n996z!19sChIJ4WvOt6rftkcR3ZoJdX3dlow",
     "name": "Zapferei",
     "city": "Oldenburg",
@@ -108,6 +180,30 @@
     ],
     "summary": "Kategori: Hafen Pub • Kokteyl Bar / Lounge. (4.9★ / 37 yorum).",
     "maps_url": "https://www.google.com/maps/place/Hafen+Pub/data=!4m7!3m6!1s0x47b343000a293367:0x1095524dab791b3b!8m2!3d54.7899236!4d9.4333813!16s%2Fg%2F11n4svg8w6!19sChIJZzMpCgBDs0cROxt5q01SlRA",
+    "added": "2026-11-16"
+  },
+  {
+    "id": "https://www.google.com/maps/place/KampBar+Paderborn/data=!4m7!3m6!1s0x47ba4df1b371308d:0x72b2828de5a773ff!8m2!3d51.716827!4d8.7562367!16s%2Fg%2F11zbcw_c_9!19sChIJjTBxs_FNukcR_3On5Y2CsnI",
+    "name": "KampBar Paderborn",
+    "city": "Paderborn",
+    "category": "KampBar Paderborn",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.9,
+    "reviews_count": 22,
+    "first_review": "Yeni/Popüler (22 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: KampBar Paderborn • Kokteyl Bar / Lounge. (4.9★ / 22 yorum).",
+    "maps_url": "https://www.google.com/maps/place/KampBar+Paderborn/data=!4m7!3m6!1s0x47ba4df1b371308d:0x72b2828de5a773ff!8m2!3d51.716827!4d8.7562367!16s%2Fg%2F11zbcw_c_9!19sChIJjTBxs_FNukcR_3On5Y2CsnI",
     "added": "2026-11-16"
   },
   {
@@ -159,6 +255,54 @@
     "added": "2026-11-16"
   },
   {
+    "id": "https://www.google.com/maps/place/Santa+Troia+Bar/data=!4m7!3m6!1s0x47b9bb0018651c7b:0x76b3fbec6cd83ec5!8m2!3d51.9637078!4d7.6206762!16s%2Fg%2F11p1sdhnl4!19sChIJexxlGAC7uUcRxT7YbOz7s3Y",
+    "name": "Santa Troia Bar",
+    "city": "Münster",
+    "category": "Santa Troia Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.8,
+    "reviews_count": 21,
+    "first_review": "Yeni/Popüler (21 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Santa Troia Bar • Kokteyl Bar / Lounge. (4.8★ / 21 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Santa+Troia+Bar/data=!4m7!3m6!1s0x47b9bb0018651c7b:0x76b3fbec6cd83ec5!8m2!3d51.9637078!4d7.6206762!16s%2Fg%2F11p1sdhnl4!19sChIJexxlGAC7uUcRxT7YbOz7s3Y",
+    "added": "2026-11-16"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Ember+Restaurant+%26+Bar/data=!4m7!3m6!1s0x47b9bb85075151f1:0xa4403ec5719c4325!8m2!3d51.9531983!4d7.6391903!16s%2Fg%2F11zwpgfg26!19sChIJ8VFRB4W7uUcRJUOcccU-QKQ",
+    "name": "Ember Restaurant & Bar",
+    "city": "Münster",
+    "category": "Ember Restaurant & Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.8,
+    "reviews_count": 35,
+    "first_review": "Yeni/Popüler (35 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Ember Restaurant & Bar • Kokteyl Bar / Lounge. (4.8★ / 35 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Ember+Restaurant+%26+Bar/data=!4m7!3m6!1s0x47b9bb85075151f1:0xa4403ec5719c4325!8m2!3d51.9531983!4d7.6391903!16s%2Fg%2F11zwpgfg26!19sChIJ8VFRB4W7uUcRJUOcccU-QKQ",
+    "added": "2026-11-16"
+  },
+  {
     "id": "https://www.google.com/maps/place/Coup+d%E2%80%98Etat/data=!4m7!3m6!1s0x47b6dffaf8baff31:0xdd1d6731ac69b496!8m2!3d53.139977!4d8.2114754!16s%2Fg%2F11lcf4mbsb!19sChIJMf-6-PrftkcRlrRprDFnHd0",
     "name": "Coup d‘Etat",
     "city": "Oldenburg",
@@ -171,6 +315,54 @@
     "reviews": [],
     "summary": "Kategori: Bar • Kokteyl Bar / Lounge. (4.7★ / 34 yorum).",
     "maps_url": "https://www.google.com/maps/place/Coup+d%E2%80%98Etat/data=!4m7!3m6!1s0x47b6dffaf8baff31:0xdd1d6731ac69b496!8m2!3d53.139977!4d8.2114754!16s%2Fg%2F11lcf4mbsb!19sChIJMf-6-PrftkcRlrRprDFnHd0",
+    "added": "2026-11-16"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Posh+Bar/data=!4m7!3m6!1s0x47b075a02608c881:0x56ddafeb9dbd0d00!8m2!3d52.3746801!4d9.7410913!16s%2Fg%2F11mswfyblw!19sChIJgcgIJqB1sEcRAA29neuv3VY",
+    "name": "Posh Bar",
+    "city": "Hannover",
+    "category": "Posh Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.4,
+    "reviews_count": 18,
+    "first_review": "Yeni/Popüler (18 yorum)",
+    "reviews": [
+      "Awesome place with sophisticated crowd",
+      "Awesome place with sophisticated crowd",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Posh Bar • Kokteyl Bar / Lounge. (4.4★ / 18 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Posh+Bar/data=!4m7!3m6!1s0x47b075a02608c881:0x56ddafeb9dbd0d00!8m2!3d52.3746801!4d9.7410913!16s%2Fg%2F11mswfyblw!19sChIJgcgIJqB1sEcRAA29neuv3VY",
+    "added": "2026-11-16"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Boca+Chica+Bielefeld/data=!4m7!3m6!1s0x47ba3d10779188d3:0x34419f893a3478ed!8m2!3d52.0231453!4d8.5391571!16s%2Fg%2F11ms0ybtsl!19sChIJ04iRdxA9ukcR7Xg0OomfQTQ",
+    "name": "Boca Chica Bielefeld",
+    "city": "Bielefeld",
+    "category": "Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.4,
+    "reviews_count": 28,
+    "first_review": "Yeni/Popüler (28 yorum)",
+    "reviews": [
+      "The place is perfect if you like Latin American music and themes. I went for a dance and we had some good drinks too. Staff and guest are very friendly....you will feel at home even if is your fist time in the place like me. Wish I had a place like this in my home town. More",
+      "The place is perfect if you like Latin American music and themes. I went for a dance and we had some good drinks too. Staff and guest are very friendly....you will feel at home even if is your fist time in the place like me. Wish I had a place like this in my home town. More",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Bar • Kokteyl Bar / Lounge. (4.4★ / 28 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Boca+Chica+Bielefeld/data=!4m7!3m6!1s0x47ba3d10779188d3:0x34419f893a3478ed!8m2!3d52.0231453!4d8.5391571!16s%2Fg%2F11ms0ybtsl!19sChIJ04iRdxA9ukcR7Xg0OomfQTQ",
     "added": "2026-11-16"
   },
   {

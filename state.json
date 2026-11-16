@@ -1,5 +1,5 @@
 {
-  "city_idx": 20,
+  "city_idx": 24,
   "seen": {
     "https://www.google.com/maps/place/Shinto+Bar+%26+Lounge/data=!4m7!3m6!1s0x47a6f81f1688f6af:0xd04915b22a1aeb98!8m2!3d51.3466704!4d12.3755216!16s%2Fg%2F1tdb_nxf!19sChIJr_aIFh_4pkcRmOsaKrIVSdA": {
       "status": "old"
@@ -179,6 +179,42 @@
       "status": "ok"
     },
     "https://www.google.com/maps/place/Luft+und+Liebe+Oldenburg/data=!4m7!3m6!1s0x47b6dfd0e6972ef9:0x14fa730fd06350de!8m2!3d53.1425028!4d8.2121908!16s%2Fg%2F11xccngc9t!19sChIJ-S6X5tDftkcR3lBj0A9z-hQ": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Tulpe/data=!4m7!3m6!1s0x47ba4d003b9f2419:0xc8f4e52824e48cbb!8m2!3d51.7181125!4d8.7488324!16s%2Fg%2F11zyj_z6z2!19sChIJGSSfOwBNukcRu4zkJCjl9Mg": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Schickeria+Bielefeld/data=!4m7!3m6!1s0x47ba3d00187562f3:0xe5017cca51d1928c!8m2!3d52.0191864!4d8.530269!16s%2Fg%2F11yrm5lkb2!19sChIJ82J1GAA9ukcRjJLRUcp8AeU": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Posh+Bar/data=!4m7!3m6!1s0x47b075a02608c881:0x56ddafeb9dbd0d00!8m2!3d52.3746801!4d9.7410913!16s%2Fg%2F11mswfyblw!19sChIJgcgIJqB1sEcRAA29neuv3VY": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Santa+Troia+Bar/data=!4m7!3m6!1s0x47b9bb0018651c7b:0x76b3fbec6cd83ec5!8m2!3d51.9637078!4d7.6206762!16s%2Fg%2F11p1sdhnl4!19sChIJexxlGAC7uUcRxT7YbOz7s3Y": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Hugos+here%3F/data=!4m7!3m6!1s0x47ba3d3c4bf867ad:0xfea7f12ba5ac0a51!8m2!3d52.0254351!4d8.5273023!16s%2Fg%2F11s2q9zz28!19sChIJrWf4Szw9ukcRUQqspSvxp_4": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/KampBar+Paderborn/data=!4m7!3m6!1s0x47ba4df1b371308d:0x72b2828de5a773ff!8m2!3d51.716827!4d8.7562367!16s%2Fg%2F11zbcw_c_9!19sChIJjTBxs_FNukcR_3On5Y2CsnI": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Royalbar-Hannover/data=!4m7!3m6!1s0x47b074bb047312df:0xcc6a75a404213e9b!8m2!3d52.3745235!4d9.7323196!16s%2Fg%2F1tj2gyhp!19sChIJ3xJzBLt0sEcRmz4hBKR1asw": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Boca+Chica+Bielefeld/data=!4m7!3m6!1s0x47ba3d10779188d3:0x34419f893a3478ed!8m2!3d52.0231453!4d8.5391571!16s%2Fg%2F11ms0ybtsl!19sChIJ04iRdxA9ukcR7Xg0OomfQTQ": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Goldbar+-+Paderborn/data=!4m7!3m6!1s0x47ba4d2469de2c89:0xe4b795e90f591668!8m2!3d51.7300523!4d8.7644865!16s%2Fg%2F11z9phf_py!19sChIJiSzeaSRNukcRaBZZD-mVt-Q": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/CocktailCorner/data=!4m7!3m6!1s0x47b0750009ea810d:0x9f734ea2fb81c25e!8m2!3d52.3717571!4d9.733208!16s%2Fg%2F11vxmj4v_c!19sChIJDYHqCQB1sEcRXsKB-6JOc58": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Drink+Logistik+Barista+%26+Cocktail+Catering/data=!4m7!3m6!1s0x47ba3d100ea7e58f:0x41b72dde4035dae8!8m2!3d52.0250101!4d8.5291705!16s%2Fg%2F11fspzls7b!19sChIJj-WnDhA9ukcR6No1QN4tt0E": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Ember+Restaurant+%26+Bar/data=!4m7!3m6!1s0x47b9bb85075151f1:0xa4403ec5719c4325!8m2!3d51.9531983!4d7.6391903!16s%2Fg%2F11zwpgfg26!19sChIJ8VFRB4W7uUcRJUOcccU-QKQ": {
       "status": "ok"
     }
   }

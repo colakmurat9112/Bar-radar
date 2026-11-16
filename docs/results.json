@@ -207,6 +207,30 @@
     "added": "2026-11-16"
   },
   {
+    "id": "https://www.google.com/maps/place/Rubin+Bar+%26+Lounge/data=!4m7!3m6!1s0x47aff709de4c8885:0x135290edeacfcea0!8m2!3d52.252817!4d10.5100437!16s%2Fg%2F11z906pb_s!19sChIJhYhM3gn3r0cRoM7P6u2QUhM",
+    "name": "Rubin Bar & Lounge",
+    "city": "Braunschweig",
+    "category": "Rubin Bar & Lounge",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.9,
+    "reviews_count": 21,
+    "first_review": "Yeni/Popüler (21 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Rubin Bar & Lounge • Kokteyl Bar / Lounge. (4.9★ / 21 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Rubin+Bar+%26+Lounge/data=!4m7!3m6!1s0x47aff709de4c8885:0x135290edeacfcea0!8m2!3d52.252817!4d10.5100437!16s%2Fg%2F11z906pb_s!19sChIJhYhM3gn3r0cRoM7P6u2QUhM",
+    "added": "2026-11-16"
+  },
+  {
     "id": "https://www.google.com/maps/place/COCO+VIBES/data=!4m7!3m6!1s0x47b6df00725caab3:0x231ababd74c12607!8m2!3d53.1493331!4d8.2268514!16s%2Fg%2F11xh2mx7sl!19sChIJs6pccgDftkcRBybBdL26GiM",
     "name": "COCO VIBES",
     "city": "Oldenburg",
@@ -303,6 +327,30 @@
     "added": "2026-11-16"
   },
   {
+    "id": "https://www.google.com/maps/place/Lunico+Bar/data=!4m7!3m6!1s0x47af93b549c91301:0x6839adf1f0e67a22!8m2!3d52.4245296!4d10.7919374!16s%2Fg%2F11g9dn4tg3!19sChIJARPJSbWTr0cRInrm8PGtOWg",
+    "name": "Lunico Bar",
+    "city": "Wolfsburg",
+    "category": "Lunico Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.8,
+    "reviews_count": 22,
+    "first_review": "Yeni/Popüler (22 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Lunico Bar • Kokteyl Bar / Lounge. (4.8★ / 22 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Lunico+Bar/data=!4m7!3m6!1s0x47af93b549c91301:0x6839adf1f0e67a22!8m2!3d52.4245296!4d10.7919374!16s%2Fg%2F11g9dn4tg3!19sChIJARPJSbWTr0cRInrm8PGtOWg",
+    "added": "2026-11-16"
+  },
+  {
     "id": "https://www.google.com/maps/place/Coup+d%E2%80%98Etat/data=!4m7!3m6!1s0x47b6dffaf8baff31:0xdd1d6731ac69b496!8m2!3d53.139977!4d8.2114754!16s%2Fg%2F11lcf4mbsb!19sChIJMf-6-PrftkcRlrRprDFnHd0",
     "name": "Coup d‘Etat",
     "city": "Oldenburg",
@@ -315,6 +363,54 @@
     "reviews": [],
     "summary": "Kategori: Bar • Kokteyl Bar / Lounge. (4.7★ / 34 yorum).",
     "maps_url": "https://www.google.com/maps/place/Coup+d%E2%80%98Etat/data=!4m7!3m6!1s0x47b6dffaf8baff31:0xdd1d6731ac69b496!8m2!3d53.139977!4d8.2114754!16s%2Fg%2F11lcf4mbsb!19sChIJMf-6-PrftkcRlrRprDFnHd0",
+    "added": "2026-11-16"
+  },
+  {
+    "id": "https://www.google.com/maps/place/Skyline+Lounge/data=!4m7!3m6!1s0x47bb3f4c58791d0f:0x9d6e730c461dab7b!8m2!3d51.3127065!4d9.4909888!16s%2Fg%2F11vwdm02zn!19sChIJDx15WEw_u0cRe6sdRgxzbp0",
+    "name": "Skyline Lounge",
+    "city": "Kassel",
+    "category": "Skyline Lounge",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.7,
+    "reviews_count": 15,
+    "first_review": "Yeni/Popüler (15 yorum)",
+    "reviews": [
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: Skyline Lounge • Kokteyl Bar / Lounge. (4.7★ / 15 yorum).",
+    "maps_url": "https://www.google.com/maps/place/Skyline+Lounge/data=!4m7!3m6!1s0x47bb3f4c58791d0f:0x9d6e730c461dab7b!8m2!3d51.3127065!4d9.4909888!16s%2Fg%2F11vwdm02zn!19sChIJDx15WEw_u0cRe6sdRgxzbp0",
+    "added": "2026-11-16"
+  },
+  {
+    "id": "https://www.google.com/maps/place/SOLO-Bar/data=!4m7!3m6!1s0x47a4d5cac9c65e75:0xeccf708c193b3bad!8m2!3d51.5306394!4d9.9343534!16s%2Fg%2F11xrsn1xcy!19sChIJdV7GycrVpEcRrTs7GYxwz-w",
+    "name": "SOLO-Bar",
+    "city": "Göttingen",
+    "category": "SOLO-Bar",
+    "is_real_bar": true,
+    "filter_reason": "Kokteyl Bar / Lounge",
+    "rating": 4.7,
+    "reviews_count": 19,
+    "first_review": "Yeni/Popüler (19 yorum)",
+    "reviews": [
+      "Great Afro bar with nice music. Wonderful reception. Highly recommend",
+      "Great Afro bar with nice music. Wonderful reception. Highly recommend",
+      "Solo Bar is an Afro Lounge, you can have a drink and dance. The place is not very big but good for a small party. More",
+      "Solo Bar is an Afro Lounge, you can have a drink and dance. The place is not very big but good for a small party. More",
+      "Fun atmosphere, great drinks, and a welcoming bartender",
+      "Fun atmosphere, great drinks, and a welcoming bartender",
+      "Translated by Google ・ See original (German)",
+      "Translated by Google ・ See original (German)"
+    ],
+    "summary": "Kategori: SOLO-Bar • Kokteyl Bar / Lounge. (4.7★ / 19 yorum).",
+    "maps_url": "https://www.google.com/maps/place/SOLO-Bar/data=!4m7!3m6!1s0x47a4d5cac9c65e75:0xeccf708c193b3bad!8m2!3d51.5306394!4d9.9343534!16s%2Fg%2F11xrsn1xcy!19sChIJdV7GycrVpEcRrTs7GYxwz-w",
     "added": "2026-11-16"
   },
   {

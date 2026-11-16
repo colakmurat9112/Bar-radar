@@ -1,5 +1,5 @@
 {
-  "city_idx": 24,
+  "city_idx": 28,
   "seen": {
     "https://www.google.com/maps/place/Shinto+Bar+%26+Lounge/data=!4m7!3m6!1s0x47a6f81f1688f6af:0xd04915b22a1aeb98!8m2!3d51.3466704!4d12.3755216!16s%2Fg%2F1tdb_nxf!19sChIJr_aIFh_4pkcRmOsaKrIVSdA": {
       "status": "old"
@@ -216,6 +216,42 @@
     },
     "https://www.google.com/maps/place/Ember+Restaurant+%26+Bar/data=!4m7!3m6!1s0x47b9bb85075151f1:0xa4403ec5719c4325!8m2!3d51.9531983!4d7.6391903!16s%2Fg%2F11zwpgfg26!19sChIJ8VFRB4W7uUcRJUOcccU-QKQ": {
       "status": "ok"
+    },
+    "https://www.google.com/maps/place/Skyline+Lounge/data=!4m7!3m6!1s0x47bb3f4c58791d0f:0x9d6e730c461dab7b!8m2!3d51.3127065!4d9.4909888!16s%2Fg%2F11vwdm02zn!19sChIJDx15WEw_u0cRe6sdRgxzbp0": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Bar+Italia/data=!4m7!3m6!1s0x47af93dc99f9aaf9:0x3c03ccf0593d2159!8m2!3d52.447378!4d10.8021046!16s%2Fg%2F11ql4mfw8d!19sChIJ-ar5mdyTr0cRWSE9WfDMAzw": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/SOLO-Bar/data=!4m7!3m6!1s0x47a4d5cac9c65e75:0xeccf708c193b3bad!8m2!3d51.5306394!4d9.9343534!16s%2Fg%2F11xrsn1xcy!19sChIJdV7GycrVpEcRrTs7GYxwz-w": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Rubin+Bar+%26+Lounge/data=!4m7!3m6!1s0x47aff709de4c8885:0x135290edeacfcea0!8m2!3d52.252817!4d10.5100437!16s%2Fg%2F11z906pb_s!19sChIJhYhM3gn3r0cRoM7P6u2QUhM": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/s%C3%BCss+%2B+cool+-+Cocktail-+und+Eventservice/data=!4m7!3m6!1s0x47aff7628cf309f5:0xd8cdf7c45b427f5c!8m2!3d52.253276!4d10.4993479!16s%2Fg%2F11s5jxgm9l!19sChIJ9QnzjGL3r0cRXH9CW8T3zdg": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Onyx/data=!4m7!3m6!1s0x47a4d49573d00001:0x3e441bae81543002!8m2!3d51.5343984!4d9.9393935!16s%2Fg%2F11h54zqspc!19sChIJAQDQc5XUpEcRAjBUga4bRD4": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Lunico+Bar/data=!4m7!3m6!1s0x47af93b549c91301:0x6839adf1f0e67a22!8m2!3d52.4245296!4d10.7919374!16s%2Fg%2F11g9dn4tg3!19sChIJARPJSbWTr0cRInrm8PGtOWg": {
+      "status": "ok"
+    },
+    "https://www.google.com/maps/place/Eichenfass+-+Wolfsburg/data=!4m7!3m6!1s0x47af927d0ef64ffd:0x25f75c40e38bd88a!8m2!3d52.3929947!4d10.7542246!16s%2Fg%2F11h2p_nm80!19sChIJ_U_2Dn2Sr0cRitiL40Bc9yU": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Pinars+-+Wolfsburg/data=!4m7!3m6!1s0x47af93b979ad3201:0x743f078ad93c5d23!8m2!3d52.4243136!4d10.7711711!16s%2Fg%2F11h1djkwbh!19sChIJATKtebmTr0cRI1082YoHP3Q": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Bar+Azzurri/data=!4m7!3m6!1s0x47af93b5b7b0ae59:0xff987aa5a72c3abd!8m2!3d52.4291141!4d10.7878054!16s%2Fg%2F1vn_x_ry!19sChIJWa6wt7WTr0cRvTosp6V6mP8": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Lolita+Biergarten/data=!4m7!3m6!1s0x47bb3fff80147121:0x391f0b2393cf095c!8m2!3d51.3189489!4d9.4923696!16s%2Fg%2F11t9kxcyhf!19sChIJIXEUgP8_u0cRXAnPkyMLHzk": {
+      "status": "old"
+    },
+    "https://www.google.com/maps/place/Old%27s+Cool+Hip+Hop+Tanz+Club+e.V./data=!4m7!3m6!1s0x47aff7005d79370d:0x40870e196683fb9c!8m2!3d52.2705534!4d10.523596!16s%2Fg%2F11vwjl60rr!19sChIJDTd5XQD3r0cRnPuDZhkOh0A": {
+      "status": "old"
     }
   }
 }
